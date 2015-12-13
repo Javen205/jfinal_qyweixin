@@ -35,7 +35,6 @@ public class MsgEncryptKit {
 	 */
 	public static String encrypt(String msg, String timestamp, String nonce) {
 		try {
-			System.out.println("加密.......");
 			ApiConfig ac = ApiConfigKit.getApiConfig();
 			WXBizMsgCrypt pc = new WXBizMsgCrypt(ac.getToken(), ac.getEncodingAesKey(), ac.getCorpId());
 			return pc.EncryptMsg(msg, timestamp, nonce);
@@ -54,7 +53,6 @@ public class MsgEncryptKit {
 	 */
 	public static String decrypt(String encryptedMsg, String timestamp, String nonce, String msgSignature) {
 		try {
-			System.out.println("解密.........");
 			ApiConfig ac = ApiConfigKit.getApiConfig();
 			
 			String encodingAesKey = ac.getEncodingAesKey();

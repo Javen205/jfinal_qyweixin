@@ -7,8 +7,8 @@ devMode = true
 token=Javen
 
 # 企业号用的账号
-corpId=wxdbc631b5210be89f
-secret=rGClVPE0iOgXlWHD7U3tsc1EhQckr3r8w9Xqejbu1IyAY5eUvgCB--p1MFZoHAxG
+corpId=wx2eb133cd5e352ac8
+secret=_dh3boGTWWy2pWHQ-YN7FGNfBfgtn6CWVCJAYtOKht8TuIfnKdZqg312sZaJjdfL
 
 #是否对消息进行加密，是否对消息进行加密，对应于微信平台的消息加解密方式，false支持明文模式及兼容模式，true支持安全模式及兼容模式
 encryptMessage=true

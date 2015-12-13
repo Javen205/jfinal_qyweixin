@@ -9,7 +9,7 @@ import com.jfinal.config.Routes;
 import com.jfinal.core.JFinal;
 import com.jfinal.kit.PropKit;
 
-public class DemoConfig extends JFinalConfig{
+public class QyWeiXinConfig extends JFinalConfig{
 
 	/**
 	 * 配置常量

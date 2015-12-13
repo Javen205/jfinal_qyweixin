@@ -27,7 +27,6 @@ public class MsgInterceptor implements Interceptor {
 	private static final Logger log =  Logger.getLogger(MsgInterceptor.class);
 	
 	public void intercept(Invocation inv) {
-		log.error("MsgInterceptor");
 		Controller controller = inv.getController();
 		if (controller instanceof MsgController == false)
 			throw new RuntimeException("控制器需要继承 MsgController");
@@ -108,12 +107,12 @@ public class MsgInterceptor implements Interceptor {
 		String signature = c.getPara("msg_signature");
 		String timestamp = c.getPara("timestamp");
 		String nonce = c.getPara("nonce");
-		boolean isOk = SignatureCheckKit.me.checkSignature(signature, timestamp, nonce);
-		if (isOk)
+//		boolean isOk = SignatureCheckKit.me.checkSignature(signature, timestamp, nonce);
+//		if (isOk)
 			c.renderText(SignatureCheckKit.me.VerifyURL(signature, timestamp, nonce, echostr));
-		else{
-			log.error("验证失败：configServer");
-		}
+//		else{
+//			log.error("验证失败：configServer");
+//		}
 			
 	}
 	

@@ -6,7 +6,6 @@ import java.util.Arrays;
 
 import com.jfinal.core.Controller;
 import com.jfinal.kit.HashKit;
-import com.jfinal.kit.HttpKit;
 import com.jfinal.qy.weixin.sdk.api.ApiConfigKit;
 import com.qq.weixin.mp.aes.AesException;
 import com.qq.weixin.mp.aes.WXBizMsgCrypt;
@@ -19,7 +18,7 @@ public class SignatureCheckKit {
 		String TOKEN = ApiConfigKit.getApiConfig().getToken();
 		String array[] = {TOKEN, timestamp, nonce};
 		Arrays.sort(array);
-		String tempStr = new StringBuilder().append(array[0] + array[1] + array[2] + array[3]).toString();
+		String tempStr = new StringBuilder().append(array[0] + array[1] + array[2]).toString();
 		tempStr = HashKit.sha1(tempStr);
 		return tempStr.equalsIgnoreCase(msgSignature);
 	}

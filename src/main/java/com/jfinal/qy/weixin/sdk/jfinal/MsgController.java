@@ -42,7 +42,6 @@ public abstract class MsgController extends Controller {
 	 */
 	@Before(MsgInterceptor.class)
 	public void index() {
-		log.error("MsgController");
 		// 开发模式输出微信服务发送过来的  xml 消息
 		if (ApiConfigKit.isDevMode()) {
 			System.out.println("接收消息:");
@@ -112,7 +111,6 @@ public abstract class MsgController extends Controller {
 			
 			// 是否需要解密消息
 			if (ApiConfigKit.getApiConfig().isEncryptMessage()) {
-				System.out.println("进行解密...........");
 				inMsgXml = MsgEncryptKit.decrypt(inMsgXml, getPara("timestamp"), getPara("nonce"), getPara("msg_signature"));
 			}
 		}
