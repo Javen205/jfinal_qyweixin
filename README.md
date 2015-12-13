@@ -404,3 +404,8 @@ public class WeixinApiController extends ApiController {
 #5、更多支持
 * 微信开发交流群：148540125
 * 关注微信公众号：javenlife
+
+[![javenlife]](http://www.cnblogs.com/zyw-205520/)  
+[javenlife]:http://7j1wfp.com1.z0.glb.clouddn.com/javenlife.jpg "关注微信公众号获得更多支持"
+
+
