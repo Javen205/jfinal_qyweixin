@@ -66,28 +66,29 @@ public class MsgInterceptor implements Interceptor {
 	 * 检测签名
 	 */
 	private boolean checkSignature(Controller controller) {
-		return true;
-//		String signature = controller.getPara("msg_signature");
-//		String timestamp = controller.getPara("timestamp");
-//		String nonce = controller.getPara("nonce");
-//		
-//		
-//		if (StrKit.isBlank(signature) || StrKit.isBlank(timestamp) || StrKit.isBlank(nonce)) {
-//			controller.renderText("check signature failure");
-//			return false;
-//		}
-//		
-//		if (SignatureCheckKit.me.checkSignature(signature, timestamp, nonce)) {
-//			return true;
-//		}
-//		else {
-//			log.error("check signature failure: " +
-//					" signature = " + controller.getPara("msg_signature") +
-//					" timestamp = " + controller.getPara("timestamp") +
-//					" nonce = " + controller.getPara("nonce"));
-//			
-//			return false;
-//		}
+		String signature = controller.getPara("msg_signature");
+		String timestamp = controller.getPara("timestamp");
+		String nonce = controller.getPara("nonce");
+		String content=getEncrypt(controller);
+		
+		
+		if (StrKit.isBlank(signature) || StrKit.isBlank(timestamp) || StrKit.isBlank(nonce)) {
+			controller.renderText("check signature failure");
+			return false;
+		}
+		
+		if (SignatureCheckKit.me.checkSignature(signature, timestamp, nonce ,content)) {
+			return true;
+		}
+		else {
+			log.error("check signature failure: " +
+					" signature = " + controller.getPara("msg_signature") +
+					" timestamp = " + controller.getPara("timestamp") +
+					" nonce = " + controller.getPara("nonce")+
+					" content = " + getEncrypt(controller));
+			
+			return false;
+		}
 	}
 	
 	/**
@@ -107,12 +108,8 @@ public class MsgInterceptor implements Interceptor {
 		String signature = c.getPara("msg_signature");
 		String timestamp = c.getPara("timestamp");
 		String nonce = c.getPara("nonce");
-//		boolean isOk = SignatureCheckKit.me.checkSignature(signature, timestamp, nonce);
-//		if (isOk)
-			c.renderText(SignatureCheckKit.me.VerifyURL(signature, timestamp, nonce, echostr));
-//		else{
-//			log.error("验证失败：configServer");
-//		}
+		
+		c.renderText(SignatureCheckKit.me.VerifyURL(signature, timestamp, nonce, echostr));
 			
 	}
 	

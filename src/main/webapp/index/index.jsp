@@ -11,7 +11,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>就诊预约</title>
+<title>欢迎使用Jfinal极速开发微信企业号</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta http-equiv="pragma" content="no-cache">
@@ -25,6 +25,6 @@
 
 </head>
 <body>
-	获取到的数据为：<h1>${Testad}</h1>
+	欢迎使用Jfinal极速开发微信企业号<h1>${test}</h1>
 </body>
 </html>

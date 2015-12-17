@@ -36,12 +36,6 @@ public class AesException extends Exception {
 			return "aes解密失败";
 		case IllegalBuffer:
 			return "解密后得到的buffer非法";
-//		case EncodeBase64Error:
-//			return "base64加密错误";
-//		case DecodeBase64Error:
-//			return "base64解密错误";
-//		case GenReturnXmlError:
-//			return "xml生成失败";
 		default:
 			return null; // cannot be
 		}

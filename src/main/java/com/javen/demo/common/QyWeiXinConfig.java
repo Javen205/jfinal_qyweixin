@@ -8,6 +8,8 @@ import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.core.JFinal;
 import com.jfinal.kit.PropKit;
+import com.jfinal.qy.weixin.sdk.api.ApiConfigKit;
+import com.jfinal.render.ViewType;
 
 public class QyWeiXinConfig extends JFinalConfig{
 
@@ -18,6 +20,10 @@ public class QyWeiXinConfig extends JFinalConfig{
 		// 加载少量必要配置，随后可用PropKit.get(...)获取值
 		PropKit.use("a_little_config.txt");
 		me.setDevMode(PropKit.getBoolean("devMode", false));
+		me.setEncoding("utf-8");
+		me.setViewType(ViewType.JSP);
+		// ApiConfigKit 设为开发模式可以在开发阶段输出请求交互的 xml 与 json 数据
+		ApiConfigKit.setDevMode(me.getDevMode());
 	}
 	
 	/**
@@ -25,7 +31,7 @@ public class QyWeiXinConfig extends JFinalConfig{
 	 */
 	public void configRoute(Routes me) {
 		me.add("/", IndexController.class,"index");	// 第三个参数为该Controller的视图存放路径
-		me.add("/qymsg", WeixinMsgController.class);
+		me.add("/qymsg1", WeixinMsgController.class);
 		me.add("/api", WeixinApiController.class);
 	}
 	
