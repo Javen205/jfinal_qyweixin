@@ -1,0 +1,698 @@
+
+2015-12-19 21:19:44
+[ERROR]-[Thread: qtp627150481-14]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 21:19:44
+[ERROR]-[Thread: qtp627150481-12]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 21:20:02
+[ERROR]-[Thread: qtp627150481-18]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 21:20:03
+[ERROR]-[Thread: qtp627150481-12]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 21:20:15
+[ERROR]-[Thread: qtp627150481-19]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 21:20:40
+[ERROR]-[Thread: qtp627150481-19]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 21:20:58
+[ERROR]-[Thread: qtp627150481-17]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 21:20:59
+[ERROR]-[Thread: qtp627150481-19]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 21:21:09
+[ERROR]-[Thread: qtp627150481-18]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 21:52:57
+[ERROR]-[Thread: qtp627150481-19]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 是服务器配置请求
+
+2015-12-19 21:52:57
+[ERROR]-[Thread: qtp627150481-19]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: token=Javen  timeStamp=1450533146  nonce=1475213145  echoStr=254R/EqU+tC9xC1KKUvdnFtdZw+gmBqFw9GSp1T5+MUxhu0+Wqv2vWPCmC6RrP4FI1Ax2/j9wJEJoRfH4PlM7A==
+
+2015-12-19 21:52:57
+[ERROR]-[Thread: qtp627150481-19]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: signature=db2e383ffde6294b2c21fd641a98b892bb1bc8a9
+
+2015-12-19 21:54:03
+[ERROR]-[Thread: qtp627150481-17]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 21:54:12
+[ERROR]-[Thread: qtp627150481-18]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 21:58:53
+[ERROR]-[Thread: qtp627150481-16]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:24:53
+[ERROR]-[Thread: qtp627150481-19]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:24:54
+[ERROR]-[Thread: qtp627150481-14]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:26:24
+[ERROR]-[Thread: qtp627150481-14]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:27:06
+[ERROR]-[Thread: qtp627150481-14]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:27:29
+[ERROR]-[Thread: qtp627150481-14]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:31:05
+[ERROR]-[Thread: qtp627150481-13]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:31:25
+[ERROR]-[Thread: qtp627150481-17]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:31:25
+[ERROR]-[Thread: qtp627150481-16]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:31:31
+[ERROR]-[Thread: qtp627150481-16]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:31:32
+[ERROR]-[Thread: qtp627150481-13]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:31:46
+[ERROR]-[Thread: qtp627150481-16]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:31:47
+[ERROR]-[Thread: qtp627150481-14]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:31:47
+[ERROR]-[Thread: qtp627150481-13]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:31:47
+[ERROR]-[Thread: qtp627150481-17]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:32:02
+[ERROR]-[Thread: qtp627150481-19]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:32:04
+[ERROR]-[Thread: qtp627150481-19]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:32:04
+[ERROR]-[Thread: qtp627150481-14]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:32:38
+[ERROR]-[Thread: qtp627150481-14]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:33:03
+[ERROR]-[Thread: qtp627150481-16]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:33:03
+[ERROR]-[Thread: qtp627150481-12]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:33:12
+[ERROR]-[Thread: qtp627150481-14]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:33:13
+[ERROR]-[Thread: qtp627150481-12]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:33:25
+[ERROR]-[Thread: qtp627150481-12]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:33:25
+[ERROR]-[Thread: qtp627150481-14]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:33:32
+[ERROR]-[Thread: qtp627150481-16]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:33:32
+[ERROR]-[Thread: qtp627150481-19]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:33:40
+[ERROR]-[Thread: qtp627150481-17]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:33:40
+[ERROR]-[Thread: qtp627150481-16]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:33:40
+[ERROR]-[Thread: qtp627150481-19]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:33:51
+[ERROR]-[Thread: qtp627150481-16]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:33:53
+[ERROR]-[Thread: qtp627150481-13]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:33:53
+[ERROR]-[Thread: qtp627150481-17]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:37:06
+[ERROR]-[Thread: qtp627150481-13]-[com.jfinal.core.ActionHandler.handle()]: /api/creatMenuApi
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:85)
+	at com.jfinal.qy.weixin.sdk.jfinal.ApiInterceptor.intercept(ApiInterceptor.java:21)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:65)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:71)
+	... 27 more
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	The method e(String) is undefined for the type Logger
+
+	at com.javen.demo.common.QyWeixinApiController.creatMenuApi(QyWeixinApiController.java:95)
+	... 32 more
+
+2015-12-19 22:38:46
+[ERROR]-[Thread: qtp627150481-12]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:38:46
+[ERROR]-[Thread: qtp627150481-13]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:38:53
+[ERROR]-[Thread: qtp627150481-19]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 22:38:53
+[ERROR]-[Thread: qtp627150481-14]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 23:11:08
+[ERROR]-[Thread: qtp627150481-14]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心",parentid": "1",/order": "1",id": "2"}
+
+2015-12-19 23:11:31
+[ERROR]-[Thread: qtp627150481-12]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心",parentid": "1",order": "1",id": "2"}
+
+2015-12-19 23:12:58
+[ERROR]-[Thread: qtp627150481-13]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心",parentid": "1",order": "1",id": "2"}
+
+2015-12-19 23:21:29
+[ERROR]-[Thread: qtp627150481-16]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-19 23:25:09
+[ERROR]-[Thread: qtp627150481-13]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心",parentid": "0",order": "1",id": "2"}
+
+2015-12-19 23:25:46
+[ERROR]-[Thread: qtp627150481-12]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心",parentid": "0",order": "1",id": "2"}
+
+2015-12-19 23:26:55
+[ERROR]-[Thread: qtp627150481-18]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心",parentid": "1",order": "1",id": "1"}
+
+2015-12-19 23:27:29
+[ERROR]-[Thread: qtp627150481-16]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心",parentid": "1",order": "1",id": "1"}
+
+2015-12-19 23:27:41
+[ERROR]-[Thread: qtp627150481-14]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心",parentid": 0,order": "1",id": "1"}
+
+2015-12-19 23:29:11
+[ERROR]-[Thread: qtp627150481-16]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心","parentid": 0,"order": "1",id": "1"}
+
+2015-12-19 23:29:28
+[ERROR]-[Thread: qtp627150481-13]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心","parentid": 0,"order": "1",id": "1"}
+
+2015-12-19 23:29:34
+[ERROR]-[Thread: qtp627150481-14]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心","parentid": 0,"order": "1","id": "1"}
+
+2015-12-19 23:29:54
+[ERROR]-[Thread: qtp627150481-17]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心","parentid": 0,"order": "1","id": "1"}
+
+2015-12-19 23:30:03
+[ERROR]-[Thread: qtp627150481-13]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心","parentid": "0","order": "1","id": "1"}
+
+2015-12-19 23:30:20
+[ERROR]-[Thread: qtp627150481-16]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心","parentid": "1","order": "1","id": "1"}
+
+2015-12-19 23:31:26
+[ERROR]-[Thread: qtp627150481-12]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心","parentid": "0","order": "1","id": "1"}
+
+2015-12-19 23:31:45
+[ERROR]-[Thread: qtp627150481-16]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "广州研发中心","parentid": "1","order": "2","id": "2"}
+
+2015-12-19 23:33:29
+[ERROR]-[Thread: qtp627150481-13]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "深圳研发中心","parentid": "1","order": "2","id": "3"}
+
+2015-12-19 23:33:43
+[ERROR]-[Thread: qtp627150481-16]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "深圳研发中心","parentid": "1","order": "2","id": "3"}
+
+2015-12-19 23:33:51
+[ERROR]-[Thread: qtp627150481-13]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "武汉研发中心","parentid": "1","order": "2","id": "4"}
+
+2015-12-19 23:35:05
+[ERROR]-[Thread: qtp627150481-13]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "XX研发中心","parentid": "1","order": "2","id": "1"}
+
+2015-12-19 23:35:39
+[ERROR]-[Thread: qtp627150481-14]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "XX研发中心","parentid": "1","order": "2","id": "5"}
+
+2015-12-19 23:36:56
+[ERROR]-[Thread: qtp627150481-18]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "XX研发中心","parentid": "1","order": "2","id": "5"}
+
+2015-12-19 23:37:05
+[ERROR]-[Thread: qtp627150481-13]-[com.javen.demo.common.QyWeixinApiController.updateDepartment()]: {"name": "北京研发中心","parentid": "1","order": "1","id": "5"}
+
+2015-12-19 23:37:09
+[ERROR]-[Thread: qtp627150481-12]-[com.javen.demo.common.QyWeixinApiController.updateDepartment()]: {"name": "北京研发中心","parentid": "1","order": "1","id": "5"}
+
+2015-12-19 23:37:21
+[ERROR]-[Thread: qtp627150481-13]-[com.javen.demo.common.QyWeixinApiController.updateDepartment()]: {"name": "北京研发中心","parentid": "1","order": "1","id": "5"}
+
+2015-12-19 23:38:31
+[ERROR]-[Thread: qtp627150481-12]-[com.javen.demo.common.QyWeixinApiController.createDepartment()]: {"name": "XX研发中心","parentid": "1","order": "2","id": "6"}
+
+2015-12-20 16:20:10
+[ERROR]-[Thread: qtp627150481-13]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 是服务器配置请求
+
+2015-12-20 16:20:10
+[ERROR]-[Thread: qtp627150481-13]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: token=Javen  timeStamp=1450599575  nonce=1190302599  echoStr=iFd7HUNgUDLpccSVneOojxC3uN8VddGPk9lJ6goJZmhYWKjXknbgUjwxvjhQr4qwcngfQM7vgksHeF8Nrm/BxA==
+
+2015-12-20 16:20:10
+[ERROR]-[Thread: qtp627150481-13]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: signature=519209bb13c35b6e00efff02afffe201c09b064e
+
+2015-12-20 16:20:11
+[ERROR]-[Thread: qtp627150481-15]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-20 16:20:11
+[ERROR]-[Thread: qtp627150481-15]-[com.jfinal.core.ActionHandler.handle()]: /qymsg?msg_signature=bf4505235770f3e07629795a1727e87f8dc0b1b3&timestamp=1450599576&nonce=1906446160
+java.lang.RuntimeException: 无法识别的事件类型batch_job_result，请查阅微信公众平台开发文档
+	at com.jfinal.qy.weixin.sdk.msg.InMsgParser.parseInEvent(InMsgParser.java:227)
+	at com.jfinal.qy.weixin.sdk.msg.InMsgParser.doParse(InMsgParser.java:73)
+	at com.jfinal.qy.weixin.sdk.msg.InMsgParser.parse(InMsgParser.java:35)
+	at com.jfinal.qy.weixin.sdk.jfinal.MsgController.getInMsg(MsgController.java:124)
+	at com.jfinal.qy.weixin.sdk.jfinal.MsgController.index(MsgController.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:71)
+	at com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept(MsgInterceptor.java:48)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:65)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-12-20 16:20:11
+[ERROR]-[Thread: qtp627150481-17]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-20 16:20:11
+[ERROR]-[Thread: qtp627150481-17]-[com.jfinal.core.ActionHandler.handle()]: /qymsg?msg_signature=bf4505235770f3e07629795a1727e87f8dc0b1b3&timestamp=1450599576&nonce=1906446160
+java.lang.RuntimeException: 无法识别的事件类型batch_job_result，请查阅微信公众平台开发文档
+	at com.jfinal.qy.weixin.sdk.msg.InMsgParser.parseInEvent(InMsgParser.java:227)
+	at com.jfinal.qy.weixin.sdk.msg.InMsgParser.doParse(InMsgParser.java:73)
+	at com.jfinal.qy.weixin.sdk.msg.InMsgParser.parse(InMsgParser.java:35)
+	at com.jfinal.qy.weixin.sdk.jfinal.MsgController.getInMsg(MsgController.java:124)
+	at com.jfinal.qy.weixin.sdk.jfinal.MsgController.index(MsgController.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:71)
+	at com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept(MsgInterceptor.java:48)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:65)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-12-20 16:20:11
+[ERROR]-[Thread: qtp627150481-15]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-20 16:20:11
+[ERROR]-[Thread: qtp627150481-15]-[com.jfinal.core.ActionHandler.handle()]: /qymsg?msg_signature=bf4505235770f3e07629795a1727e87f8dc0b1b3&timestamp=1450599576&nonce=1906446160
+java.lang.RuntimeException: 无法识别的事件类型batch_job_result，请查阅微信公众平台开发文档
+	at com.jfinal.qy.weixin.sdk.msg.InMsgParser.parseInEvent(InMsgParser.java:227)
+	at com.jfinal.qy.weixin.sdk.msg.InMsgParser.doParse(InMsgParser.java:73)
+	at com.jfinal.qy.weixin.sdk.msg.InMsgParser.parse(InMsgParser.java:35)
+	at com.jfinal.qy.weixin.sdk.jfinal.MsgController.getInMsg(MsgController.java:124)
+	at com.jfinal.qy.weixin.sdk.jfinal.MsgController.index(MsgController.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:71)
+	at com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept(MsgInterceptor.java:48)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:65)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-12-20 16:20:47
+[ERROR]-[Thread: qtp627150481-13]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-20 16:24:48
+[ERROR]-[Thread: qtp627150481-14]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 是服务器配置请求
+
+2015-12-20 16:24:48
+[ERROR]-[Thread: qtp627150481-14]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: token=Javen  timeStamp=1450599852  nonce=694434647  echoStr=l/hkJuSyVktqnVOFd/KCnuXlfsi5T4rS9eL53r0gPKciB12bcGVyh3l0VqOZn7e58vlI0PAX/TSpM7Wavc3AZg==
+
+2015-12-20 16:24:48
+[ERROR]-[Thread: qtp627150481-14]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: signature=adcffd8a4dc46a50a00295a757813d258eff169a
+
+2015-12-20 16:24:48
+[ERROR]-[Thread: qtp627150481-13]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-20 16:25:57
+[ERROR]-[Thread: qtp627150481-12]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-20 16:26:22
+[ERROR]-[Thread: qtp627150481-13]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 是服务器配置请求
+
+2015-12-20 16:26:22
+[ERROR]-[Thread: qtp627150481-13]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: token=Javen  timeStamp=1450599947  nonce=812858597  echoStr=mhnyifpWuFXY1uXWXeBxG6/tx6E52Tmz0ZOkIEmLGWomwoO6oYDcBETs1ebNIb2ShKH2OzvAWU25xbyYLpYmzw==
+
+2015-12-20 16:26:22
+[ERROR]-[Thread: qtp627150481-13]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: signature=3a7732d9686da2bc4e66e45b69f4bb54dbcf4485
+
+2015-12-20 16:26:22
+[ERROR]-[Thread: qtp627150481-16]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-20 16:27:06
+[ERROR]-[Thread: qtp627150481-16]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 是服务器配置请求
+
+2015-12-20 16:27:06
+[ERROR]-[Thread: qtp627150481-16]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: token=Javen  timeStamp=1450599991  nonce=886796664  echoStr=5ZaW4mChEDthmUCxp8afe0dos3P1vlmqBVEy4hDtIQqJ9Gx4RDseeAz5oub7yUZ7dOBo+BHXhChqTYDg5v4Xog==
+
+2015-12-20 16:27:06
+[ERROR]-[Thread: qtp627150481-16]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: signature=853503a4e509860662825143db920e39fdb80356
+
+2015-12-20 16:27:07
+[ERROR]-[Thread: qtp627150481-12]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-20 16:34:37
+[ERROR]-[Thread: qtp627150481-16]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-20 16:35:03
+[ERROR]-[Thread: qtp627150481-13]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 是服务器配置请求
+
+2015-12-20 16:35:03
+[ERROR]-[Thread: qtp627150481-13]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: token=Javen  timeStamp=1450600468  nonce=475722744  echoStr=REbl/pcuP1iVV8K8ON72OUeHtxcRzYh5z36np+ZwjyKaa9KEqNWIywbVWa7Ef+SVDSzOT0XpywUgqFi9Al32/w==
+
+2015-12-20 16:35:03
+[ERROR]-[Thread: qtp627150481-13]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: signature=2c8d391d20e049d92e093e0ae56af55efece7fcf
+
+2015-12-20 16:35:03
+[ERROR]-[Thread: qtp627150481-15]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-20 16:36:59
+[ERROR]-[Thread: qtp627150481-15]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 是服务器配置请求
+
+2015-12-20 16:36:59
+[ERROR]-[Thread: qtp627150481-15]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: token=Javen  timeStamp=1450600584  nonce=555208172  echoStr=mwRUsUxzx0EMOpqmTQqqCNk6WC+9eKzhmx5k69ECj2/f4KXVMx6gdouyp4Tlxs4KxOUriQgtuI2nGRlE1gY4Dg==
+
+2015-12-20 16:36:59
+[ERROR]-[Thread: qtp627150481-15]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: signature=ff5b159692bd097456edf80410b5eea171c84b53
+
+2015-12-20 16:37:00
+[ERROR]-[Thread: qtp627150481-14]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-20 16:49:27
+[ERROR]-[Thread: qtp627150481-18]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 是服务器配置请求
+
+2015-12-20 16:49:27
+[ERROR]-[Thread: qtp627150481-18]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: token=Javen  timeStamp=1450601332  nonce=1834641178  echoStr=37wBOc2eA0+2a2flCtNqs3xckEU013QwZKZcC9xz56HDFphdVJz+smKLoF2qJIiKuBwkdxZ3Ob6lBjpd4ereqg==
+
+2015-12-20 16:49:27
+[ERROR]-[Thread: qtp627150481-18]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: signature=16e76b3aac0aec0ecb32734c14da1a4824f7e0cc
+
+2015-12-20 16:49:27
+[ERROR]-[Thread: qtp627150481-13]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-20 16:52:07
+[ERROR]-[Thread: qtp627150481-14]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 是服务器配置请求
+
+2015-12-20 16:52:07
+[ERROR]-[Thread: qtp627150481-14]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: token=Javen  timeStamp=1450601492  nonce=552366144  echoStr=a9UJVHP1OWDqQ9LrjnMlu5BinA74WqbM4XqgflCghYOGb/PtHrTUlnmb7QoaEgpXzZsTDC2fjsU9kqGIt/rncA==
+
+2015-12-20 16:52:07
+[ERROR]-[Thread: qtp627150481-14]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: signature=1d8c3d345643f760dab2921aeefc481bdfaafaae
+
+2015-12-20 16:52:07
+[ERROR]-[Thread: qtp627150481-15]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-20 16:52:17
+[ERROR]-[Thread: qtp627150481-18]-[com.jfinal.core.ActionHandler.handle()]: /api/uploadFile
+java.lang.RuntimeException: java.io.FileNotFoundException: /Users/Javen/Documents/batch_user_sample2.csv (No such file or directory)
+	at com.jfinal.qy.weixin.sdk.utils.HttpUtils$OkHttpDelegate.base(HttpUtils.java:110)
+	at com.jfinal.qy.weixin.sdk.utils.HttpUtils$OkHttpDelegate.upload(HttpUtils.java:247)
+	at com.jfinal.qy.weixin.sdk.utils.HttpUtils.upload(HttpUtils.java:54)
+	at com.jfinal.qy.weixin.sdk.api.media.MediaApi.uploadMedia(MediaApi.java:44)
+	at com.javen.demo.common.QyWeixinApiController.uploadFile(QyWeixinApiController.java:333)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:71)
+	at com.jfinal.qy.weixin.sdk.jfinal.ApiInterceptor.intercept(ApiInterceptor.java:21)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:65)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.io.FileNotFoundException: /Users/Javen/Documents/batch_user_sample2.csv (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at okio.Okio.source(Okio.java:163)
+	at com.squareup.okhttp.RequestBody$3.writeTo(RequestBody.java:117)
+	at com.squareup.okhttp.MultipartBuilder$MultipartRequestBody.writeOrCountBytes(MultipartBuilder.java:277)
+	at com.squareup.okhttp.MultipartBuilder$MultipartRequestBody.writeTo(MultipartBuilder.java:297)
+	at com.squareup.okhttp.internal.http.HttpEngine$NetworkInterceptorChain.proceed(HttpEngine.java:890)
+	at com.squareup.okhttp.internal.http.HttpEngine.readResponse(HttpEngine.java:748)
+	at com.squareup.okhttp.Call.getResponse(Call.java:277)
+	at com.squareup.okhttp.Call$ApplicationInterceptorChain.proceed(Call.java:234)
+	at com.squareup.okhttp.Call.getResponseWithInterceptorChain(Call.java:196)
+	at com.squareup.okhttp.Call.execute(Call.java:79)
+	at com.jfinal.qy.weixin.sdk.utils.HttpUtils$OkHttpDelegate.base(HttpUtils.java:104)
+	... 36 more
+
+2015-12-20 16:52:32
+[ERROR]-[Thread: qtp627150481-16]-[com.jfinal.core.ActionHandler.handle()]: /api/uploadFile
+java.lang.RuntimeException: java.io.FileNotFoundException: /Users/Javen/Documents/batch_user_sample2.csv (No such file or directory)
+	at com.jfinal.qy.weixin.sdk.utils.HttpUtils$OkHttpDelegate.base(HttpUtils.java:110)
+	at com.jfinal.qy.weixin.sdk.utils.HttpUtils$OkHttpDelegate.upload(HttpUtils.java:247)
+	at com.jfinal.qy.weixin.sdk.utils.HttpUtils.upload(HttpUtils.java:54)
+	at com.jfinal.qy.weixin.sdk.api.media.MediaApi.uploadMedia(MediaApi.java:44)
+	at com.javen.demo.common.QyWeixinApiController.uploadFile(QyWeixinApiController.java:333)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:71)
+	at com.jfinal.qy.weixin.sdk.jfinal.ApiInterceptor.intercept(ApiInterceptor.java:21)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:65)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.io.FileNotFoundException: /Users/Javen/Documents/batch_user_sample2.csv (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at okio.Okio.source(Okio.java:163)
+	at com.squareup.okhttp.RequestBody$3.writeTo(RequestBody.java:117)
+	at com.squareup.okhttp.MultipartBuilder$MultipartRequestBody.writeOrCountBytes(MultipartBuilder.java:277)
+	at com.squareup.okhttp.MultipartBuilder$MultipartRequestBody.writeTo(MultipartBuilder.java:297)
+	at com.squareup.okhttp.internal.http.HttpEngine$NetworkInterceptorChain.proceed(HttpEngine.java:890)
+	at com.squareup.okhttp.internal.http.HttpEngine.readResponse(HttpEngine.java:748)
+	at com.squareup.okhttp.Call.getResponse(Call.java:277)
+	at com.squareup.okhttp.Call$ApplicationInterceptorChain.proceed(Call.java:234)
+	at com.squareup.okhttp.Call.getResponseWithInterceptorChain(Call.java:196)
+	at com.squareup.okhttp.Call.execute(Call.java:79)
+	at com.jfinal.qy.weixin.sdk.utils.HttpUtils$OkHttpDelegate.base(HttpUtils.java:104)
+	... 36 more
+
+2015-12-20 16:53:23
+[ERROR]-[Thread: qtp627150481-15]-[com.jfinal.core.ActionHandler.handle()]: /api/uploadFile
+java.lang.RuntimeException: java.io.FileNotFoundException: /Users/Javen/Documents/batch_user_sample2.csv (No such file or directory)
+	at com.jfinal.qy.weixin.sdk.utils.HttpUtils$OkHttpDelegate.base(HttpUtils.java:110)
+	at com.jfinal.qy.weixin.sdk.utils.HttpUtils$OkHttpDelegate.upload(HttpUtils.java:247)
+	at com.jfinal.qy.weixin.sdk.utils.HttpUtils.upload(HttpUtils.java:54)
+	at com.jfinal.qy.weixin.sdk.api.media.MediaApi.uploadMedia(MediaApi.java:44)
+	at com.javen.demo.common.QyWeixinApiController.uploadFile(QyWeixinApiController.java:333)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:71)
+	at com.jfinal.qy.weixin.sdk.jfinal.ApiInterceptor.intercept(ApiInterceptor.java:21)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:65)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.io.FileNotFoundException: /Users/Javen/Documents/batch_user_sample2.csv (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at okio.Okio.source(Okio.java:163)
+	at com.squareup.okhttp.RequestBody$3.writeTo(RequestBody.java:117)
+	at com.squareup.okhttp.MultipartBuilder$MultipartRequestBody.writeOrCountBytes(MultipartBuilder.java:277)
+	at com.squareup.okhttp.MultipartBuilder$MultipartRequestBody.writeTo(MultipartBuilder.java:297)
+	at com.squareup.okhttp.internal.http.HttpEngine$NetworkInterceptorChain.proceed(HttpEngine.java:890)
+	at com.squareup.okhttp.internal.http.HttpEngine.readResponse(HttpEngine.java:748)
+	at com.squareup.okhttp.Call.getResponse(Call.java:277)
+	at com.squareup.okhttp.Call$ApplicationInterceptorChain.proceed(Call.java:234)
+	at com.squareup.okhttp.Call.getResponseWithInterceptorChain(Call.java:196)
+	at com.squareup.okhttp.Call.execute(Call.java:79)
+	at com.jfinal.qy.weixin.sdk.utils.HttpUtils$OkHttpDelegate.base(HttpUtils.java:104)
+	... 36 more
+
+2015-12-20 16:55:16
+[ERROR]-[Thread: qtp627150481-12]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 是服务器配置请求
+
+2015-12-20 16:55:16
+[ERROR]-[Thread: qtp627150481-12]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: token=Javen  timeStamp=1450601681  nonce=1721393830  echoStr=xPRY49A9U7Na/7O6y2jrFkHLKhLNrDVYWCtzZIxxREyTva3GDnSrJJjAI6rFTtkGkJoKeh5o/Mfl4GSYu5cT7g==
+
+2015-12-20 16:55:16
+[ERROR]-[Thread: qtp627150481-12]-[com.qq.weixin.mp.aes.WXBizMsgCrypt.VerifyURL()]: signature=4338ff1581385284b32bb160019848f763728f10
+
+2015-12-20 16:55:16
+[ERROR]-[Thread: qtp627150481-14]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
+
+2015-12-20 16:56:36
+[ERROR]-[Thread: qtp627150481-15]-[com.jfinal.qy.weixin.sdk.jfinal.MsgInterceptor.intercept()]: 对开发测试更加友好
