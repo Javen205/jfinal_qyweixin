@@ -4,6 +4,9 @@ package com.javen.demo.common;
 import com.jfinal.kit.PropKit;
 import com.jfinal.log.Logger;
 import com.jfinal.qy.weixin.sdk.api.ApiConfig;
+import com.jfinal.qy.weixin.sdk.api.ApiResult;
+import com.jfinal.qy.weixin.sdk.api.ConBatchApi;
+import com.jfinal.qy.weixin.sdk.api.SendMessageApi;
 import com.jfinal.qy.weixin.sdk.jfinal.MsgController;
 import com.jfinal.qy.weixin.sdk.msg.in.InImageMsg;
 import com.jfinal.qy.weixin.sdk.msg.in.InLocationMsg;
@@ -11,6 +14,7 @@ import com.jfinal.qy.weixin.sdk.msg.in.InShortVideoMsg;
 import com.jfinal.qy.weixin.sdk.msg.in.InTextMsg;
 import com.jfinal.qy.weixin.sdk.msg.in.InVideoMsg;
 import com.jfinal.qy.weixin.sdk.msg.in.InVoiceMsg;
+import com.jfinal.qy.weixin.sdk.msg.in.event.BatchJob;
 import com.jfinal.qy.weixin.sdk.msg.in.event.InEnterAgentEvent;
 import com.jfinal.qy.weixin.sdk.msg.in.event.InFollowEvent;
 import com.jfinal.qy.weixin.sdk.msg.in.event.InJobEvent;
@@ -22,34 +26,34 @@ import com.jfinal.qy.weixin.sdk.msg.out.OutImageMsg;
 import com.jfinal.qy.weixin.sdk.msg.out.OutNewsMsg;
 import com.jfinal.qy.weixin.sdk.msg.out.OutTextMsg;
 import com.jfinal.qy.weixin.sdk.msg.out.OutVoiceMsg;
+import com.jfinal.qy.weixin.sdk.msg.send.QiYeTextMsg;
+import com.jfinal.qy.weixin.sdk.msg.send.Text;
 
 /**
- * 将此 DemoController 在YourJFinalConfig 中注册路由，
- * 并设置好weixin开发者中心的 URL 与 token ，使 URL 指向该
- * DemoController 继承自父类 WeixinController 的 index
+ * 将此 QyWeixinMsgController 在YourJFinalConfig 中注册路由，
+ * 并设置好应用中心回调模式中的 URL 与 token 以及EncodingAESKey，使 URL 指向该
+ * QyWeixinMsgController 继承自父类 MsgController 的 index
  * 方法即可直接运行看效果，在此基础之上修改相关的方法即可进行实际项目开发
  */
-public class WeixinMsgController extends MsgController {
+public class QyWeixinMsgController extends MsgController {
 
-	static Logger logger = Logger.getLogger(WeixinMsgController.class);
-	private static final String helpStr = "\t发送 help 可获得帮助，发送\"视频\" 可获取视频教程，发送 \"美女\" 可看美女，发送 music 可听音乐 ，发送新闻可看JFinal新版本消息。公众号功能持续完善中";
+	static Logger logger = Logger.getLogger(QyWeixinMsgController.class);
+	private static final String helpStr = "\t发送 help 可获得帮助，发送 \"美女\" 可看美女 ，发送新闻可看新版本消息。公众号功能持续完善中";
 
-	/**
-	 * 如果要支持多公众账号，只需要在此返回各个公众号对应的  ApiConfig 对象即可
-	 * 可以通过在请求 url 中挂参数来动态从数据库中获取 ApiConfig 属性值
-	 */
 	public ApiConfig getApiConfig() {
 		ApiConfig ac = new ApiConfig();
 		
 		// 配置微信 API 相关常量
 		ac.setToken(PropKit.get("token"));
 		ac.setCorpId(PropKit.get("corpId"));
-		ac.setSecret(PropKit.get("secret"));
+		ac.setCorpSecret(PropKit.get("secret"));
 		
 		/**
 		 *  是否对消息进行加密，对应于微信平台的消息加解密方式：
 		 *  1：true进行加密且必须配置 encodingAesKey
 		 *  2：false采用明文模式，同时也支持混合模式
+		 *  
+		 *  目前企业号只支持加密且必须配置
 		 */
 		ac.setEncryptMessage(PropKit.getBoolean("encryptMessage", true));
 		ac.setEncodingAesKey(PropKit.get("encodingAesKey", "setting it in config file"));
@@ -58,7 +62,7 @@ public class WeixinMsgController extends MsgController {
 
 	/**
 	 * 实现父类抽方法，处理文本消息
-	 * 本例子中根据消息中的不同文本内容分别做出了不同的响应，同时也是为了测试 jfinal weixin sdk的基本功能：
+	 * 本例子中根据消息中的不同文本内容分别做出了不同的响应，同时也是为了测试 jfinal qyweixin sdk的基本功能：
 	 *     本方法仅测试了 OutTextMsg、OutNewsMsg、OutMusicMsg 三种类型的OutMsg，
 	 *     其它类型的消息会在随后的方法中进行测试
 	 */
@@ -75,25 +79,19 @@ public class WeixinMsgController extends MsgController {
 		// 图文消息测试
 		else if ("news".equalsIgnoreCase(msgContent) || "新闻".equalsIgnoreCase(msgContent)) {
 			OutNewsMsg outMsg = new OutNewsMsg(inTextMsg);
-			outMsg.addNews("JFinal 2.0 发布,JAVA 极速 WEB+ORM 框架", "本星球第一个极速开发框架", "https://mmbiz.qlogo.cn/mmbiz/KJoUl0sqZFS0fRW68poHoU3v9ulTWV8MgKIduxmzHiamkb3yHia8pCicWVMCaFRuGGMnVOPrrj2qM13u9oTahfQ9A/0?wx_fmt=png", "http://mp.weixin.qq.com/s?__biz=MzA4NjM4Mjk2Mw==&mid=211063163&idx=1&sn=87d54e2992237a3f791f08b5cdab7990#rd");
-			outMsg.addNews("JFinal 1.8 发布,JAVA 极速 WEB+ORM 框架", "现在就加入 JFinal 极速开发世界，节省更多时间去跟女友游山玩水 ^_^", "http://mmbiz.qpic.cn/mmbiz/zz3Q6WSrzq1ibBkhSA1BibMuMxLuHIvUfiaGsK7CC4kIzeh178IYSHbYQ5eg9tVxgEcbegAu22Qhwgl5IhZFWWXUw/0", "http://mp.weixin.qq.com/s?__biz=MjM5ODAwOTU3Mg==&mid=200313981&idx=1&sn=3bc5547ba4beae12a3e8762ababc8175#rd");
-			outMsg.addNews("JFinal 1.6 发布,JAVA 极速 WEB+ORM 框架", "JFinal 1.6 主要升级了 ActiveRecord 插件，本次升级全面支持多数源、多方言、多缓", "http://mmbiz.qpic.cn/mmbiz/zz3Q6WSrzq0fcR8VmNCgugHXv7gVlxI6w95RBlKLdKUTjhOZIHGSWsGvjvHqnBnjIWHsicfcXmXlwOWE6sb39kA/0", "http://mp.weixin.qq.com/s?__biz=MjM5ODAwOTU3Mg==&mid=200121522&idx=1&sn=ee24f352e299b2859673b26ffa4a81f6#rd");
+			outMsg.addNews("Jfinal qyweixin 发布,JAVA 极速 WEB+ORM 框架", "本星球第一个极速开发框架", "https://mmbiz.qlogo.cn/mmbiz/ibHRiaZ9MRcUpjHhhNQzCl9zGicPBWibh1ndW6Mj27ibCREGGVa9mag0iatwDJ1fSPhsib2LiaBVVenAU8ibqW1kGeka9HQ/0?wx_fmt=png","http://mp.weixin.qq.com/s?__biz=MzA4MDA2OTA0Mg==&mid=400919708&idx=1&sn=c35cf7fe2c77f19f4c3edcdb9607925f#rd");
+			outMsg.addNews("微信公众号", "大家一起来学习交流", "http://mmbiz.qpic.cn/mmbiz/zz3Q6WSrzq0fcR8VmNCgugHXv7gVlxI6w95RBlKLdKUTjhOZIHGSWsGvjvHqnBnjIWHsicfcXmXlwOWE6sb39kA/0", "http://mp.weixin.qq.com/s?__biz=MzA4MDA2OTA0Mg==&mid=208184833&idx=1&sn=d9e615e45902c3c72db6c24b65c4af3e#rd");
 			render(outMsg);
 		}
-		
 		else if ("美女".equalsIgnoreCase(msgContent)) {
 			OutNewsMsg outMsg = new OutNewsMsg(inTextMsg);
 			outMsg.addNews(
-					"JFinal 宝贝更新喽",
-					"jfinal 宝贝更新喽，我们只看美女 ^_^",
-					"https://mmbiz.qlogo.cn/mmbiz/KJoUl0sqZFRHa3VrmibqAXRfYPNdiamFnpPTOvXoxsFlRoOHbVibGhmHOEUQiboD3qXWszKuzWpibFxsVW1RmNB9hPw/0?wx_fmt=jpeg",
-					"http://mp.weixin.qq.com/s?__biz=MzA4NjM4Mjk2Mw==&mid=211356950&idx=1&sn=6315a1a2848aa8cb0694bf1f4accfb07#rd");
-			// outMsg.addNews("秀色可餐", "JFinal Weixin 极速开发就是这么爽，有木有 ^_^", "http://mmbiz.qpic.cn/mmbiz/zz3Q6WSrzq2GJLC60ECD7rE7n1cvKWRNFvOyib4KGdic3N5APUWf4ia3LLPxJrtyIYRx93aPNkDtib3ADvdaBXmZJg/0", "http://mp.weixin.qq.com/s?__biz=MjM5ODAwOTU3Mg==&mid=200987822&idx=1&sn=7eb2918275fb0fa7b520768854fb7b80#rd");
+					"宝贝更新喽",
+					"宝贝更新喽，我们只看美女 ^_^",
+					"https://mmbiz.qlogo.cn/mmbiz/ibHRiaZ9MRcUok6KHMCAA0GiaZXjfPq48ZicFhyDGShaK21enPCXoY1DbbdqwQ1JzgC9jsYK0kRicoFzqBZqTM7CPmQ/0?wx_fmt=png",
+					"http://mp.weixin.qq.com/s?__biz=MzA4MDA2OTA0Mg==&mid=207820985&idx=1&sn=4ef9361e68495fc3ba1d2f7f2bca0511#rd");
 
 			render(outMsg);
-		}
-		else if ("视频教程".equalsIgnoreCase(msgContent) || "视频".equalsIgnoreCase(msgContent)) {
-			renderOutTextMsg("\thttp://pan.baidu.com/s/1nt2zAT7  \t密码:824r");
 		}
 		// 其它文本消息直接返回原值 + 帮助提示
 		else {
@@ -228,9 +226,19 @@ public class WeixinMsgController extends MsgController {
 	 */
 	@Override
 	protected void processInJobEvent(InJobEvent inJobEvent) {
-		OutTextMsg outMsg = new OutTextMsg(inJobEvent);
-		outMsg.setContent("异步任务完成");
-		render(outMsg);
+		BatchJob batchJob = inJobEvent.getBatchJob();
+		
+		ApiResult batchGetResult = ConBatchApi.batchGetResult(batchJob.getJobId());
+		
+		QiYeTextMsg text=new QiYeTextMsg();
+		text.setAgentid("16");
+		text.setSafe("0");
+		text.setTouser("Javen");
+		text.setText(new Text("异步任务完成:\n JobType:"+batchJob.getJobType()
+				+"\n JobId:"+batchJob.getJobId()
+				+"\n 执行结果："+batchGetResult.getJson()));
+		SendMessageApi.sendTextMsg(text);
+		renderNull();
 	}
 	
 

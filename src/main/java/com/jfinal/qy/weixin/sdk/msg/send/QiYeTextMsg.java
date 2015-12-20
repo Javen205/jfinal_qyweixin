@@ -16,7 +16,7 @@ public class QiYeTextMsg extends QiYeBaseMsg {
 	
 
 	public QiYeTextMsg() {
-		this.msgtype=EnumMessageType.text.name();
+		this.msgtype=MessageType.text.name();
 	}
 
 

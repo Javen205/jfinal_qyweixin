@@ -30,9 +30,9 @@ public class QyWeiXinConfig extends JFinalConfig{
 	 * 配置路由
 	 */
 	public void configRoute(Routes me) {
-		me.add("/", IndexController.class,"index");	// 第三个参数为该Controller的视图存放路径
-		me.add("/qymsg1", WeixinMsgController.class);
-		me.add("/api", WeixinApiController.class);
+		me.add("/", QyIndexController.class,"index");	// 第三个参数为该Controller的视图存放路径
+		me.add("/qymsg", QyWeixinMsgController.class);
+		me.add("/api", QyWeixinApiController.class);
 	}
 	
 	/**

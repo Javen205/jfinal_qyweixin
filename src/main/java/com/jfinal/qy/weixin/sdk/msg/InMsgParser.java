@@ -221,6 +221,7 @@ public class InMsgParser {
 			String errCode = batchJob.elementText("ErrCode");
 			String errMsg = batchJob.elementText("ErrMsg");
 			e.setBatchJob(new BatchJob(jobId, jobType, errCode, errMsg));
+			return e;
 		}
 		
 

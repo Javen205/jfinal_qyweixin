@@ -20,8 +20,8 @@ public class QiYeVoiceMsg extends QiYeBaseMsg {
 	}
 
 	public QiYeVoiceMsg(String mediaId) {
-		super();
 		media_id = mediaId;
+		this.msgtype=MessageType.voice.name();
 	}
 	
 }

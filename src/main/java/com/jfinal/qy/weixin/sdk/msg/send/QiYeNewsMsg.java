@@ -1,9 +1,5 @@
 package com.jfinal.qy.weixin.sdk.msg.send;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 /**
  * 图文混排的消息
  * 
@@ -31,7 +27,7 @@ public class QiYeNewsMsg extends QiYeBaseMsg {
 
 
 	public QiYeNewsMsg(int articleCount,News news) {
-		super();
+		this.msgtype=MessageType.news.name();
 		ArticleCount = articleCount;
 		this.news = news;
 	}
@@ -47,6 +43,6 @@ public class QiYeNewsMsg extends QiYeBaseMsg {
 	}
 
 	public QiYeNewsMsg() {
-		super();
+		this.msgtype=MessageType.news.name();
 	}
 }

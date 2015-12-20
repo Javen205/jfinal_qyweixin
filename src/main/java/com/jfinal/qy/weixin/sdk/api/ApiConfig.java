@@ -13,7 +13,7 @@ public class ApiConfig {
 	
 	private String token = null;
 	private String corpId = null;
-	private String secret=null;
+	private String corpSecret=null;
 	private String encodingAesKey = null;
 	private boolean messageEncrypt = false;	// 消息加密与否
 	
@@ -64,14 +64,14 @@ public class ApiConfig {
 	
 	
 	
-	public String getSecret() {
-		return secret;
+	public String getCorpSecret() {
+		return corpSecret;
 	}
 
-	public void setSecret(String secret) {
+	public void setCorpSecret(String secret) {
 		if (secret == null)
 			throw new IllegalArgumentException("secret 值不能为 null");
-		this.secret = secret;
+		this.corpSecret = secret;
 	}
 
 	public String getEncodingAesKey() {

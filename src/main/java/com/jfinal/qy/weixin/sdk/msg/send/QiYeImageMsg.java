@@ -17,8 +17,11 @@ public class QiYeImageMsg extends QiYeBaseMsg {
 	}
 
 	public QiYeImageMsg(String mediaId) {
-		super();
 		media_id = mediaId;
+		this.msgtype=MessageType.image.name();
+	}
+	public QiYeImageMsg() {
+		this.msgtype=MessageType.image.name();
 	}
 	
 }

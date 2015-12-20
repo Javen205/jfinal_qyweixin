@@ -55,7 +55,7 @@ public class AccessTokenApi {
 	public static synchronized void refreshAccessToken() {
 		ApiConfig ac = ApiConfigKit.getApiConfig();
 		String corpid = ac.getCorpId();
-		String corpsecret = ac.getSecret();
+		String corpsecret = ac.getCorpSecret();
 		final Map<String, String> queryParas = ParaMap.create("corpid", corpid).put("corpsecret", corpsecret).getData();
 		
 		// 最多三次请求

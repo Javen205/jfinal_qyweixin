@@ -29,9 +29,9 @@ public class QiYeVideoMsg extends QiYeBaseMsg{
 		this.description = description;
 	}
 	public QiYeVideoMsg(String mediaId, String title, String description) {
-		super();
 		this.media_id = mediaId;
 		this.title = title;
 		this.description = description;
+		this.msgtype=MessageType.video.name();
 	}
 }

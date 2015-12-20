@@ -17,11 +17,11 @@ public class QiYeFileMsg extends QiYeBaseMsg {
 	}
 
 	public QiYeFileMsg(String mediaId) {
-		super();
 		media_id = mediaId;
+		this.msgtype=MessageType.file.name();
 	}
 	
 	public QiYeFileMsg() {
-		super();
+		this.msgtype=MessageType.file.name();
 	}
 }

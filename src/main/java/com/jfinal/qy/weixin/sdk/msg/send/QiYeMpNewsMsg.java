@@ -36,7 +36,7 @@ public class QiYeMpNewsMsg extends QiYeBaseMsg {
 	}
 
 	public QiYeMpNewsMsg() {
-		super();
+		this.msgtype=MessageType.mpnews.name();
 	}
 
 }
