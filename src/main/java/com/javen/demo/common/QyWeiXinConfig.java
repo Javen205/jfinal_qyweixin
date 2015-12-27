@@ -12,13 +12,25 @@ import com.jfinal.qy.weixin.sdk.api.ApiConfigKit;
 import com.jfinal.render.ViewType;
 
 public class QyWeiXinConfig extends JFinalConfig{
-
+	/**
+	 * 如果生产环境配置文件存在，则优先加载该配置，否则加载开发环境配置文件
+	 * @param pro 生产环境配置文件
+	 * @param dev 开发环境配置文件
+	 */
+	public void loadProp(String pro, String dev) {
+		try {
+			PropKit.use(pro);
+		}
+		catch (Exception e) {
+			PropKit.use(dev);
+		}
+	}
 	/**
 	 * 配置常量
 	 */
 	public void configConstant(Constants me) {
 		// 加载少量必要配置，随后可用PropKit.get(...)获取值
-		PropKit.use("a_little_config.txt");
+		loadProp("a_little_config_pro.txt", "a_little_config.txt");
 		me.setDevMode(PropKit.getBoolean("devMode", false));
 		me.setEncoding("utf-8");
 		me.setViewType(ViewType.JSP);
@@ -32,7 +44,9 @@ public class QyWeiXinConfig extends JFinalConfig{
 	public void configRoute(Routes me) {
 		me.add("/", QyIndexController.class,"index");	// 第三个参数为该Controller的视图存放路径
 		me.add("/qymsg", QyWeixinMsgController.class);
-		me.add("/api", QyWeixinApiController.class);
+		me.add("/qyapi", QyWeixinApiController.class);
+		me.add("/qyoauth2", QyOAuthController.class);
+		me.add("/qyjssdk", QyJssdkController.class,"jsp");
 	}
 	
 	/**

@@ -21,12 +21,12 @@ public class ConDepartmentApi {
 	/**
 	 * 创建部门
 	 * @param data
-	 * {
-		   "name": "广州研发中心",部门名称。长度限制为1~64个字节，字符不能包括\:*?"<>｜
-		   "parentid": "1",父亲部门id。根部门id为1
-		   "order": "1",在父部门中的次序值。order值小的排序靠前。
-		   "id": "1" 部门id，整型。指定时必须大于1，不指定时则自动生成
-	   }
+	 * {<br/>
+		   "name": "广州研发中心",部门名称。长度限制为1~64个字节，字符不能包括\:*?"<>｜<br/>
+		   "parentid": "1",父亲部门id。根部门id为1<br/>
+		   "order": "1",在父部门中的次序值。order值小的排序靠前。<br/>
+		   "id": "1" 部门id，整型。指定时必须大于1，不指定时则自动生成<br/>
+	   }<br/>
 	 * 
 	 * @return
 	 */
@@ -38,12 +38,12 @@ public class ConDepartmentApi {
 	/**
 	 * 更新部分
 	 * @param data
-	 * {
-		   "name": "广州研发中心",部门名称。长度限制为1~64个字节，字符不能包括\:*?"<>｜
-		   "parentid": "1",父亲部门id。根部门id为1
-		   "order": "1",在父部门中的次序值。order值小的排序靠前。
-		   "id": "1" 部门id
-	   }
+	 * {<br/>
+		   "name": "广州研发中心",部门名称。长度限制为1~64个字节，字符不能包括\:*?"<>｜<br/>
+		   "parentid": "1",父亲部门id。根部门id为1<br/>
+		   "order": "1",在父部门中的次序值。order值小的排序靠前。<br/>
+		   "id": "1" 部门id<br/>
+	   }<br/>
 	 * @return
 	 */
 	public static ApiResult updateDepartment(String data){

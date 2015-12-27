@@ -41,17 +41,17 @@ public class ConBatchApi {
 	/**
 	 * 邀请成员关注
 	 * @param data
-	 * {
-			"touser":"xxx|xxx",  成员ID列表，多个接收者用‘|’分隔，最多支持1000个。
-			"toparty":"xxx|xxx", 部门ID列表，多个接收者用‘|’分隔，最多支持100个。
-			"totag":"xxx|xxx",  标签ID列表，多个接收者用‘|’分隔。
-			"callback": 回调信息。如填写该项则任务完成后，通过callback推送事件给企业。具体请参考应用回调模式中的相应选项
-			{
-			 	"url": "xxx",
-			 	"token": "xxx",
-			 	"encodingaeskey": "xxx"
-			}
-		}
+	 * {<br/>
+			"touser":"xxx|xxx",  成员ID列表，多个接收者用‘|’分隔，最多支持1000个。<br/>
+			"toparty":"xxx|xxx", 部门ID列表，多个接收者用‘|’分隔，最多支持100个。<br/>
+			"totag":"xxx|xxx",  标签ID列表，多个接收者用‘|’分隔。<br/>
+			"callback": 回调信息。如填写该项则任务完成后，通过callback推送事件给企业。具体请参考应用回调模式中的相应选项<br/>
+			{<br/>
+			 	"url": "xxx",<br/>
+			 	"token": "xxx",<br/>
+			 	"encodingaeskey": "xxx"<br/>
+			}<br/>
+		}<br/>
 	 * @return
 	 */
 	public static ApiResult inviteUsers(String data){
@@ -62,15 +62,15 @@ public class ConBatchApi {
 	/**
 	 * 增量更新成员
 	 * @param data
-	 * {
-			"media_id":"xxxxxx", 上传的csv文件的media_id
-			"callback":
+	 * {<br/>
+			"media_id":"xxxxxx", 上传的csv文件的media_id <br/>
+			"callback":<br/>
 			{
-			 	"url": "xxx",
-			 	"token": "xxx",
-			 	"encodingaeskey": "xxx"
-			}
-		}
+			 	"url": "xxx",<br/>
+			 	"token": "xxx",<br/>
+			 	"encodingaeskey": "xxx"<br/>
+			}<br/>
+		}<br/>
 	 * @return
 	 */
 	public static ApiResult updateSyncUser(String data){

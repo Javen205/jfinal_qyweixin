@@ -25,10 +25,10 @@ public class ConTagApi {
 	/**
 	 * 创建标签
 	 * @param data
-	 * {
-		   "tagname": "UI", 标签名称，长度为1~64个字节，标签名不可与其他标签重名。
-		   "tagid": id   标签id，整型，指定此参数时新增的标签会生成对应的标签id，不指定时则以目前最大的id自增。
-		}
+	 * {<br/>
+		   "tagname": "UI", 标签名称，长度为1~64个字节，标签名不可与其他标签重名。<br/>
+		   "tagid": id   标签id，整型，指定此参数时新增的标签会生成对应的标签id，<br/>不指定时则以目前最大的id自增。
+		}<br/>
 	 * 
 	 * @return
 	 */
@@ -40,10 +40,10 @@ public class ConTagApi {
 	/**
 	 * 更新标签名字
 	 * @param data
-	 * {
-		   "tagid": "1", 标签ID
-		   "tagname": "UI design" 标签名称，长度为1~64个字节，标签不可与其他标签重名。
-	   }
+	 * {<br/>
+		   "tagid": "1", 标签ID<br/>
+		   "tagname": "UI design" 标签名称，长度为1~64个字节，标签不可与其他标签重名。<br/>
+	   }<br/>
 	 * @return
 	 */
 	public static ApiResult updateTag(String data){
@@ -54,7 +54,7 @@ public class ConTagApi {
 	
 	/**
 	 * 删除标签
-	 * @param userid 成员UserID
+	 * @param tagid 
 	 * @return
 	 */
 	public static ApiResult deleteTag(String tagid){
@@ -76,11 +76,11 @@ public class ConTagApi {
 	/**
 	 * 增加标签成员
 	 * @param data
-	 * {
-		   "tagid": "1", 标签ID
-		   "userlist":[ "user1","user2"], 企业成员ID列表，注意：userlist、partylist不能同时为空，单次请求长度不超过1000
-		   "partylist": [4] 企业部门ID列表，注意：userlist、partylist不能同时为空，单次请求长度不超过100
-		}
+	 * {<br/>
+		   "tagid": "1", 标签ID<br/>
+		   "userlist":[ "user1","user2"], 企业成员ID列表，注意：userlist、partylist不能同时为空，单次请求长度不超过1000<br/>
+		   "partylist": [4] 企业部门ID列表，注意：userlist、partylist不能同时为空，单次请求长度不超过100<br/>
+		}<br/>
 	 * @return
 	 */
 	public static ApiResult addTagUsers(String data){
@@ -91,11 +91,11 @@ public class ConTagApi {
 	/**
 	 * 删除标签成员
 	 * @param data
-	 * {
-		   "tagid": "1",  标签ID 企业成员ID列表，注意：userlist、partylist不能同时为空
-		   "userlist":[ "user1","user2"], 企业部门ID列表，注意：userlist、partylist不能同时为空
-		   "partylist":[2,4]
-		}
+	 * {<br/>
+		   "tagid": "1",  标签ID 企业成员ID列表，注意：userlist、partylist不能同时为空<br/>
+		   "userlist":[ "user1","user2"], 企业部门ID列表，注意：userlist、partylist不能同时为空<br/>
+		   "partylist":[2,4]<br/>
+		}<br/>
 	 * @return
 	 */
 	public static ApiResult deleteTagUsers(String data){

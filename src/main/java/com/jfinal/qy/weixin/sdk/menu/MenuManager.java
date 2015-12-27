@@ -1,39 +1,11 @@
 package com.jfinal.qy.weixin.sdk.menu;
 
-
-import com.jfinal.kit.JsonKit;
-import com.jfinal.qy.weixin.sdk.api.ApiConfig;
-import com.jfinal.qy.weixin.sdk.api.ApiConfigKit;
-import com.jfinal.qy.weixin.sdk.api.ApiResult;
-import com.jfinal.qy.weixin.sdk.api.MenuApi;
-
 /**
  * @author Javen
  * @Email javenlife@126.com
  * 菜单管理器类 
  */
 public class MenuManager  {
-	 public static void main(String[] args) { 
-		 
-		   // 将菜单对象转换成json字符串
-		   //有问题：主菜单项多了一个type
-		   String jsonMenu = JsonKit.toJson(getMenu()).toString();
-		   System.out.println(jsonMenu);
-		   ApiConfig ac = new ApiConfig();
-			
-			// 配置微信 API 相关常量
-			ac.setCorpId("wx2eb133cd5e352ac8");
-			ac.setCorpSecret("_dh3boGTWWy2pWHQ-YN7FGNfBfgtn6CWVCJAYtOKht8TuIfnKdZqg312sZaJjdfL");
-		    ApiConfigKit.setThreadLocalApiConfig(ac);
-		   
-		   //创建菜单
-	       ApiResult apiResult=MenuApi.createMenu(jsonMenu,"16");
-	       
-	       
-	       System.out.println(apiResult.getJson());
-	 }  
-	 
-	 
 	 	/** 
 	     * 组装菜单数据 
 	     *  

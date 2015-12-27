@@ -26,18 +26,18 @@ public class ConUserApi {
 	/**
 	 * 创建成员
 	 * @param data
-	 * {
-		   "userid": "zhangsan",
-		   "name": "张三",
-		   "department": [1, 2],
-		   "position": "产品经理",
-		   "mobile": "15913215421",
-		   "gender": "1",
-		   "email": "zhangsan@gzdev.com",
-		   "weixinid": "zhangsan4dev",
-		   "avatar_mediaid": "2-G6nrLmr5EC3MNb_-zL1dDdzkd0p7cNliYu9V5w7o8K0",
+	 * {<br/>
+		   "userid": "zhangsan",<br/>
+		   "name": "张三",<br/>
+		   "department": [1, 2],<br/>
+		   "position": "产品经理",<br/>
+		   "mobile": "15913215421",<br/>
+		   "gender": "1",<br/>
+		   "email": "zhangsan@gzdev.com",<br/>
+		   "weixinid": "zhangsan4dev",<br/>
+		   "avatar_mediaid": "2-G6nrLmr5EC3MNb_-zL1dDdzkd0p7cNliYu9V5w7o8K0",<br/>
 		   "extattr": {"attrs":[{"name":"爱好","value":"旅游"},{"name":"卡号","value":"1234567234"}]}
-		}
+		}<br/>
 	 * 
 	 * @return
 	 */
@@ -49,19 +49,19 @@ public class ConUserApi {
 	/**
 	 * 更新成员
 	 * @param data
-	 * {
-		   "userid": "zhangsan",
-		   "name": "李四",
-		   "department": [1],
-		   "position": "后台工程师",
-		   "mobile": "15913215421",
-		   "gender": "1",
-		   "email": "zhangsan@gzdev.com",
-		   "weixinid": "lisifordev",
-		   "enable": 1,
-		   "avatar_mediaid": "2-G6nrLmr5EC3MNb_-zL1dDdzkd0p7cNliYu9V5w7o8K0",
+	 * {<br/>
+		   "userid": "zhangsan",<br/>
+		   "name": "李四",<br/>
+		   "department": [1],<br/>
+		   "position": "后台工程师",<br/>
+		   "mobile": "15913215421",<br/>
+		   "gender": "1",<br/>
+		   "email": "zhangsan@gzdev.com",<br/>
+		   "weixinid": "lisifordev",<br/>
+		   "enable": 1,<br/>
+		   "avatar_mediaid": "2-G6nrLmr5EC3MNb_-zL1dDdzkd0p7cNliYu9V5w7o8K0",<br/>
 		   "extattr": {"attrs":[{"name":"爱好","value":"旅游"},{"name":"卡号","value":"1234567234"}]}
-		}
+		}<br/>
 	 * @return
 	 */
 	public static ApiResult updateUser(String data){

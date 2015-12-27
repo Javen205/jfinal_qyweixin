@@ -93,6 +93,18 @@ public class QyWeixinMsgController extends MsgController {
 
 			render(outMsg);
 		}
+		else if ("OAuth".equalsIgnoreCase(msgContent)) {
+			String url="http://javen.ngrok.natapp.cn/qyoauth2";
+			String urlStr="<a href=\""+url+"\">点击我授权</a>";
+			
+			OutTextMsg outMsg = new OutTextMsg(inTextMsg);
+			outMsg.setContent(urlStr);
+			render(outMsg);
+		}else if ("jssdk".equalsIgnoreCase(msgContent)) {
+			String url="http://javen.ngrok.natapp.cn/qyjssdk";
+			String urlStr="<a href=\""+url+"\">JSSDK</a>";
+			renderOutTextMsg("授权地址"+urlStr);
+		}
 		// 其它文本消息直接返回原值 + 帮助提示
 		else {
 			renderOutTextMsg("\t文本消息已成功接收，内容为： " + inTextMsg.getContent() + "\n\n" + helpStr);

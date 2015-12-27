@@ -9,6 +9,7 @@ import com.alibaba.fastjson.JSON;
 import com.jfinal.kit.JsonKit;
 import com.jfinal.kit.PropKit;
 import com.jfinal.log.Logger;
+import com.jfinal.qy.weixin.sdk.api.AgentApi;
 import com.jfinal.qy.weixin.sdk.api.ApiConfig;
 import com.jfinal.qy.weixin.sdk.api.ApiResult;
 import com.jfinal.qy.weixin.sdk.api.ConBatchApi;
@@ -16,10 +17,10 @@ import com.jfinal.qy.weixin.sdk.api.ConDepartmentApi;
 import com.jfinal.qy.weixin.sdk.api.ConTagApi;
 import com.jfinal.qy.weixin.sdk.api.ConUserApi;
 import com.jfinal.qy.weixin.sdk.api.MenuApi;
+import com.jfinal.qy.weixin.sdk.api.OAuthApi;
 import com.jfinal.qy.weixin.sdk.api.SendMessageApi;
 import com.jfinal.qy.weixin.sdk.api.media.MediaApi;
 import com.jfinal.qy.weixin.sdk.api.media.MediaApi.MediaType;
-import com.jfinal.qy.weixin.sdk.api.media.MediaFile;
 import com.jfinal.qy.weixin.sdk.jfinal.ApiController;
 import com.jfinal.qy.weixin.sdk.menu.MenuManager;
 import com.jfinal.qy.weixin.sdk.msg.send.Article;
@@ -92,7 +93,9 @@ public class QyWeixinApiController extends ApiController {
 		ApiResult sendTextMsg = SendMessageApi.sendNewsMsg(qiYeNewsMsg);
 		renderText(sendTextMsg.getJson());
 	}
-	
+	/**
+	 * 发送图片
+	 */
 	public void sendImage(){
 		QiYeImageMsg image=new QiYeImageMsg();
 		image.setAgentid("16");
@@ -102,7 +105,9 @@ public class QyWeixinApiController extends ApiController {
 		ApiResult apiResult = SendMessageApi.sendImageMsg(image);
 		renderText(apiResult.getJson());
 	}
-	
+	/**
+	 * 发送文件
+	 */
 	public void sendFile(){
 		QiYeFileMsg file=new QiYeFileMsg();
 		file.setAgentid("16");
@@ -357,9 +362,6 @@ public class QyWeixinApiController extends ApiController {
 		renderText(apiResult.getJson());
 	}
 	
-	public void get(){
-		MediaFile mediaFile=MediaApi.getMedia("1s5aCsU1-sPwQMcf_exgRGliqQ6RMwpNv0sHm6J-e1ICIQdC6q4rTX72Ob-0hqgITdDK3twbFtJ_XRilP9zWvhg");
-	}
 	
 	public void uploadImage(){
 		ApiResult apiResult=MediaApi.uploadMedia(MediaType.IMAGE, new File("/Users/Javen/Downloads/网络微生活.jpg"));
@@ -389,6 +391,44 @@ public class QyWeixinApiController extends ApiController {
 		ApiResult apiResult=ConBatchApi.updateSyncUser(data);
 		renderText(apiResult.getJson());
 	}
-	 
+	
+	/**
+	 * 获取企业号应用
+	 */
+	public void getAgent(){
+		ApiResult apiResult=AgentApi.getAgent("16");
+		renderText(apiResult.getJson());
+	}
+	/**
+	 * 设置企业号应用
+	 */
+	public void setAgent(){
+		String data="{"+
+		   "\"agentid\": \"16\","+
+		   "\"report_location_flag\": \"1\","+
+		  // "\"logo_mediaid\": \"xxxxx\","+
+		   "\"name\": \"智慧云端日记\","+
+		   "\"description\": \"企业号测试应用\","+
+		   "\"redirect_domain\": \"javen.ngrok.natapp.cn\","+
+		   "\"isreportuser\":1,"+
+		   "\"isreportenter\":1}";
+			System.out.println(data);
+		ApiResult apiResult=AgentApi.setAgent(data);
+		renderText(apiResult.getJson());
+	}
+	/**
+	 * 获取应用概况列表
+	 */
+	public void getListAgent(){
+		ApiResult apiResult=AgentApi.getListAgent();
+		renderText(apiResult.getJson());
+	}
+	
+	public void toUserId(){
+		String json="{\"openid\":\"oD3e5jpSC3C8Qq5uon_SEeRwc9AA\"}";
+		System.out.println("json..."+json);
+		ApiResult apiResult = OAuthApi.ToUserId(json);
+		renderText(apiResult.getJson());
+	}
 }
 
