@@ -12,6 +12,8 @@ import com.jfinal.log.Logger;
 import com.jfinal.qy.weixin.sdk.api.AgentApi;
 import com.jfinal.qy.weixin.sdk.api.ApiConfig;
 import com.jfinal.qy.weixin.sdk.api.ApiResult;
+import com.jfinal.qy.weixin.sdk.api.ChatApi;
+import com.jfinal.qy.weixin.sdk.api.ChatApi.ChatUrl;
 import com.jfinal.qy.weixin.sdk.api.ConBatchApi;
 import com.jfinal.qy.weixin.sdk.api.ConDepartmentApi;
 import com.jfinal.qy.weixin.sdk.api.ConTagApi;
@@ -23,6 +25,10 @@ import com.jfinal.qy.weixin.sdk.api.media.MediaApi;
 import com.jfinal.qy.weixin.sdk.api.media.MediaApi.MediaType;
 import com.jfinal.qy.weixin.sdk.jfinal.ApiController;
 import com.jfinal.qy.weixin.sdk.menu.MenuManager;
+import com.jfinal.qy.weixin.sdk.msg.chat.ChatReceiver;
+import com.jfinal.qy.weixin.sdk.msg.chat.ChatReceiver.ChatType;
+import com.jfinal.qy.weixin.sdk.msg.chat.TextChat;
+import com.jfinal.qy.weixin.sdk.msg.chat.TextChatMsg;
 import com.jfinal.qy.weixin.sdk.msg.send.Article;
 import com.jfinal.qy.weixin.sdk.msg.send.News;
 import com.jfinal.qy.weixin.sdk.msg.send.QiYeFileMsg;
@@ -423,11 +429,30 @@ public class QyWeixinApiController extends ApiController {
 		ApiResult apiResult=AgentApi.getListAgent();
 		renderText(apiResult.getJson());
 	}
-	
+	/**
+	 * 如果用户未关注将无法转化
+	 * openid转换成userid接口
+	 */
 	public void toUserId(){
 		String json="{\"openid\":\"oD3e5jpSC3C8Qq5uon_SEeRwc9AA\"}";
 		System.out.println("json..."+json);
 		ApiResult apiResult = OAuthApi.ToUserId(json);
+		renderText(apiResult.getJson());
+	}
+	
+	public void sendTextChat(){
+		TextChat textChat=new TextChat();
+		
+		ChatReceiver receiver=new ChatReceiver();
+		receiver.setType(ChatType.single);
+		receiver.setId("Javen");
+		
+		textChat.setReceiver(receiver);
+		textChat.setSender("Javen");
+		textChat.setText(new TextChatMsg("企业会话消息测试....."));
+		String data=JSON.toJSONString(textChat);
+		System.out.println("data:"+data);
+		ApiResult apiResult = ChatApi.Chat(ChatUrl.sendUrl, data);
 		renderText(apiResult.getJson());
 	}
 }

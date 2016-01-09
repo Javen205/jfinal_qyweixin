@@ -65,7 +65,7 @@ public class OAuthApi {
 		return new ApiResult(jsonResult);
 	}
 	/**
-	 * 测试失败
+	 * 
 	 * openid转换成userid接口
 	 * @param data
 	 {

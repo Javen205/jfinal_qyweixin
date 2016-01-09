@@ -86,7 +86,7 @@ public class QyOAuthController extends ApiController {
 						openid = object.getString("OpenId");
 						String json="{\"openid\":\""+openid+"\"}";
 						System.out.println("json..."+json);
-						//测试失败 openid无法转化为userid
+						//如果未关注 openid无法转化为userid
 						ApiResult toUserIdApiResult = OAuthApi.ToUserId(json);
 						System.out.println("toUserIdApiResult:"+toUserIdApiResult.getJson());
 						if (toUserIdApiResult.isSucceed()) {

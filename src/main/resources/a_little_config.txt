@@ -1,4 +1,4 @@
-jdbcUrl = jdbc:mysql://127.0.0.1/jfinal_weixin?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+jdbcUrl = jdbc:mysql://127.0.0.1/jfinal_qyweixin?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
 user = root
 password =
 devMode = true
