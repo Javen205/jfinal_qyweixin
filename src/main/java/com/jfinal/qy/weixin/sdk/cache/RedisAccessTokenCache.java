@@ -21,17 +21,14 @@ public class RedisAccessTokenCache implements IAccessTokenCache {
 		this.cache = cache;
 	}
 	
-	@Override
 	public <T> T get(String key) {
 		return cache.get(ACCESS_TOKEN_PREFIX + key);
 	}
 	
-	@Override
 	public void set(String key, Object object) {
 		cache.setex(ACCESS_TOKEN_PREFIX + key, DEFAULT_TIME_OUT, object);
 	}
 	
-	@Override
 	public void remove(String key) {
 		cache.del(ACCESS_TOKEN_PREFIX + key);
 	}

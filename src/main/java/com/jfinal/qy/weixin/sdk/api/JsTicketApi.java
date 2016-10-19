@@ -47,7 +47,6 @@ public class JsTicketApi {
 			// 最多三次请求
 			jsTicket = RetryUtils.retryOnException(3, new Callable<JsTicket>() {
 				
-				@Override
 				public JsTicket call() throws Exception {
 					return new JsTicket(HttpUtils.get(apiUrl, pm.getData()));
 				}

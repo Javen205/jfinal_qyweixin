@@ -115,7 +115,7 @@ public final class JsonUtils {
 	private static class JacksonDelegate implements JsonDelegate {
 		private com.fasterxml.jackson.databind.ObjectMapper objectMapper = new com.fasterxml.jackson.databind.ObjectMapper();
 		
-		@Override
+		
 		public String toJson(Object object) {
 			try {
 				return objectMapper.writeValueAsString(object);
@@ -124,7 +124,7 @@ public final class JsonUtils {
 			}
 		}
 
-		@Override
+		
 		public <T> T decode(String jsonString, Class<T> valueType) {
 			try {
 				return objectMapper.readValue(jsonString, valueType);
@@ -139,12 +139,12 @@ public final class JsonUtils {
 	 */
 	private static class FastJsonDelegate implements JsonDelegate {
 		
-		@Override
+		
 		public String toJson(Object object) {
 			return com.alibaba.fastjson.JSONObject.toJSONString(object);
 		}
 		
-		@Override
+		
 		public <T> T decode(String jsonString, Class<T> valueType) {
 			return com.alibaba.fastjson.JSON.parseObject(jsonString, valueType);
 		} 
@@ -156,12 +156,12 @@ public final class JsonUtils {
 	private static class GsonJsonDelegate implements JsonDelegate {
 		private com.google.gson.Gson gson = new com.google.gson.GsonBuilder().create();
 		
-		@Override
+		
 		public String toJson(Object object) {
 			return gson.toJson(object);
 		}
 		
-		@Override
+		
 		public <T> T decode(String jsonString, Class<T> valueType) {
 			return gson.fromJson(jsonString, valueType);
 		}
@@ -172,12 +172,12 @@ public final class JsonUtils {
 	 */
 	private static class JsonKitDelegate implements JsonDelegate {
 		
-		@Override
+		
 		public String toJson(Object object) {
 			return com.jfinal.kit.JsonKit.toJson(object);
 		}
 		
-		@Override
+		
 		public <T> T decode(String jsonString, Class<T> valueType) {
 			throw new RuntimeException("Jackson or Fastjson or Gson are not supported~");
 		}
