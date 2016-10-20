@@ -61,7 +61,6 @@ public class AccessTokenApi {
 		// 最多三次请求
 		AccessToken result = RetryUtils.retryOnException(3, new Callable<AccessToken>() {
 			
-			@Override
 			public AccessToken call() throws Exception {
 				String json = HttpUtils.get(url, queryParas);
 				return new AccessToken(json);

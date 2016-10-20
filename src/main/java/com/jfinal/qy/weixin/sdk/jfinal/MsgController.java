@@ -5,7 +5,7 @@ import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 import com.jfinal.ext.interceptor.NotAction;
 import com.jfinal.kit.HttpKit;
-import com.jfinal.log.Logger;
+import com.jfinal.log.Log;
 import com.jfinal.qy.weixin.sdk.api.ApiConfig;
 import com.jfinal.qy.weixin.sdk.api.ApiConfigKit;
 import com.jfinal.qy.weixin.sdk.kit.MsgEncryptKit;
@@ -32,7 +32,7 @@ import com.jfinal.qy.weixin.sdk.msg.out.OutTextMsg;
  */
 public abstract class MsgController extends Controller {
 	
-	private static final Logger log =  Logger.getLogger(MsgController.class);
+	private static final Log log =  Log.getLog(MsgController.class);
 	private String inMsgXml = null;		// 本次请求 xml数据
 	private InMsg inMsg = null;			// 本次请求 xml 解析后的 InMsg 对象
 	public abstract ApiConfig getApiConfig();

@@ -96,7 +96,6 @@ public class JsTicket implements ResultCheck, Serializable {
 		return (errorCode == null || errorCode == 0);
 	}
 
-	@Override
 	public boolean matching() {
 		return isAvailable();
 	}

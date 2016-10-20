@@ -2,7 +2,7 @@
 package com.javen.demo.common;
 
 import com.jfinal.kit.PropKit;
-import com.jfinal.log.Logger;
+import com.jfinal.log.Log;
 import com.jfinal.qy.weixin.sdk.api.ApiConfig;
 import com.jfinal.qy.weixin.sdk.api.ApiResult;
 import com.jfinal.qy.weixin.sdk.api.ConBatchApi;
@@ -37,7 +37,7 @@ import com.jfinal.qy.weixin.sdk.msg.send.Text;
  */
 public class QyWeixinMsgController extends MsgController {
 
-	static Logger logger = Logger.getLogger(QyWeixinMsgController.class);
+	static Log log =  Log.getLog(QyWeixinMsgController.class);
 	private static final String helpStr = "\t发送 help 可获得帮助，发送 \"美女\" 可看美女 ，发送新闻可看新版本消息。公众号功能持续完善中";
 
 	public ApiConfig getApiConfig() {
@@ -183,7 +183,7 @@ public class QyWeixinMsgController extends MsgController {
 		}// 如果为取消关注事件，将无法接收到传回的信息
 		if (InFollowEvent.EVENT_INFOLLOW_UNSUBSCRIBE.equals(inFollowEvent.getEvent()))
 		{
-			logger.debug("取消关注：" + inFollowEvent.getFromUserName());
+			log.debug("取消关注：" + inFollowEvent.getFromUserName());
 		}
 	}
 	/**

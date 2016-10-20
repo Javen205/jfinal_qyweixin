@@ -10,7 +10,7 @@ import com.jfinal.aop.Invocation;
 import com.jfinal.core.Controller;
 import com.jfinal.kit.HttpKit;
 import com.jfinal.kit.StrKit;
-import com.jfinal.log.Logger;
+import com.jfinal.log.Log;
 import com.jfinal.qy.weixin.sdk.api.ApiConfigKit;
 import com.jfinal.qy.weixin.sdk.kit.SignatureCheckKit;
 
@@ -24,7 +24,7 @@ import com.jfinal.qy.weixin.sdk.kit.SignatureCheckKit;
  */
 public class MsgInterceptor implements Interceptor {
 	
-	private static final Logger log =  Logger.getLogger(MsgInterceptor.class);
+	private static final Log log =  Log.getLog(MsgInterceptor.class);
 	
 	public void intercept(Invocation inv) {
 		Controller controller = inv.getController();

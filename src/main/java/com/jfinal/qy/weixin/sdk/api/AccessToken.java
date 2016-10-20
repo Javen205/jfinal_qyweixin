@@ -83,7 +83,6 @@ public class AccessToken implements ResultCheck, Serializable {
 		return errmsg;
 	}
 
-	@Override
 	public boolean matching() {
 		return isAvailable();
 	}

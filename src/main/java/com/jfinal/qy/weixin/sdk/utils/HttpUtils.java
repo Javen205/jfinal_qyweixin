@@ -111,13 +111,13 @@ public final class HttpUtils {
 			}
 		}
 		
-		@Override
+		
 		public String get(String url) {
 			com.squareup.okhttp.Request request = new com.squareup.okhttp.Request.Builder().url(url).get().build();
 			return base(request);
 		}
 		
-		@Override
+		
 		public String get(String url, Map<String, String> queryParas) {
 			com.squareup.okhttp.HttpUrl.Builder urlBuilder = com.squareup.okhttp.HttpUrl.parse(url).newBuilder();
 			for (Entry<String, String> entry : queryParas.entrySet()) {
@@ -128,7 +128,7 @@ public final class HttpUtils {
 			return base(request);
 		}
 		
-		@Override
+		
 		public String post(String url, String params) {
 			com.squareup.okhttp.RequestBody body = com.squareup.okhttp.RequestBody.create(CONTENT_TYPE_FORM, params);
 			com.squareup.okhttp.Request request = new com.squareup.okhttp.Request.Builder()
@@ -138,7 +138,7 @@ public final class HttpUtils {
 			return base(request);
 		}
 		
-		@Override
+		
 		public String postSSL(String url, String data, String certPath, String certPass) {
 			com.squareup.okhttp.RequestBody body = com.squareup.okhttp.RequestBody.create(CONTENT_TYPE_FORM, data);
 			com.squareup.okhttp.Request request = new com.squareup.okhttp.Request.Builder()
@@ -170,7 +170,7 @@ public final class HttpUtils {
 			}
 		}
 		
-		@Override
+		
 		public MediaFile download(String url) {
 			com.squareup.okhttp.Request request = new com.squareup.okhttp.Request.Builder().url(url).get().build();
 			try {
@@ -204,7 +204,7 @@ public final class HttpUtils {
 			}
 		}
 		
-		@Override
+		
 		public InputStream download(String url, String params) {
 			com.squareup.okhttp.Request request;
 			if (StrKit.notBlank(params)) {
@@ -225,7 +225,7 @@ public final class HttpUtils {
 			
 		}
 		
-		@Override
+		
 		public String upload(String url, File file, String params) {
 			com.squareup.okhttp.RequestBody fileBody = com.squareup.okhttp.RequestBody
 					.create(com.squareup.okhttp.MediaType.parse("application/octet-stream"), file);
@@ -254,27 +254,27 @@ public final class HttpUtils {
 	 */
 	private static class HttpKitDelegate implements HttpDelegate {
 		
-		@Override
+		
 		public String get(String url) {
 			return com.jfinal.kit.HttpKit.get(url);
 		}
 		
-		@Override
+		
 		public String get(String url, Map<String, String> queryParas) {
 			return com.jfinal.kit.HttpKit.get(url, queryParas);
 		}
 		
-		@Override
+		
 		public String post(String url, String data) {
 			return com.jfinal.kit.HttpKit.post(url, data);
 		}
 		
-		@Override
+		
 		public String postSSL(String url, String data, String certPath, String certPass) {
 			return HttpKitExt.postSSL(url, data, certPath, certPass);
 		}
 		
-		@Override
+		
 		public MediaFile download(String url) {
 			try {
 				return HttpKitExt.download(url);
@@ -283,7 +283,7 @@ public final class HttpUtils {
 			}
 		}
 		
-		@Override
+		
 		public InputStream download(String url, String params) {
 			try {
 				return HttpKitExt.downloadMaterial(url, params);
@@ -292,7 +292,7 @@ public final class HttpUtils {
 			}
 		}
 		
-		@Override
+		
 		public String upload(String url, File file, String params) {
 			try {
 				return HttpKitExt.uploadMedia(url, file, params);
