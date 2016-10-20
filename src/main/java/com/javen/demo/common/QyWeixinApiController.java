@@ -8,7 +8,7 @@ import java.util.List;
 import com.alibaba.fastjson.JSON;
 import com.jfinal.kit.JsonKit;
 import com.jfinal.kit.PropKit;
-import com.jfinal.log.Logger;
+import com.jfinal.log.Log;
 import com.jfinal.qy.weixin.sdk.api.AgentApi;
 import com.jfinal.qy.weixin.sdk.api.ApiConfig;
 import com.jfinal.qy.weixin.sdk.api.ApiResult;
@@ -38,7 +38,7 @@ import com.jfinal.qy.weixin.sdk.msg.send.QiYeTextMsg;
 import com.jfinal.qy.weixin.sdk.msg.send.Text;
 
 public class QyWeixinApiController extends ApiController {
-	private static final Logger log =  Logger.getLogger(QyWeixinApiController.class);
+	private static final Log log =  Log.getLog(QyWeixinApiController.class);
 	/**
 	 * 如果要支持多公众账号，只需要在此返回各个公众号对应的  ApiConfig 对象即可
 	 * 可以通过在请求 url 中挂参数来动态从数据库中获取 ApiConfig 属性值
