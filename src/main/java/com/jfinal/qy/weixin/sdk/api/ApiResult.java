@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.jfinal.qy.weixin.sdk.utils.JsonUtils;
-import com.jfinal.qy.weixin.sdk.utils.ReturnCode;
 
 /**
  * 封装 API 响应结果，将 json 字符串转换成 java 数据类型
@@ -36,7 +35,7 @@ public class ApiResult {
 		this.json = jsonStr;
 		
 		try {
-			Map<String, Object> temp = JsonUtils.decode(jsonStr, Map.class);
+			Map<String, Object> temp = JsonUtils.parse(jsonStr, Map.class);
 			this.attrs = temp;
 			
 			refreshAccessTokenIfInvalid();

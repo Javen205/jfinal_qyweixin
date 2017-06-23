@@ -1,8 +1,9 @@
 
 package com.javen.demo.common;
 
+import org.apache.log4j.Logger;
+
 import com.jfinal.kit.PropKit;
-import com.jfinal.log.Log;
 import com.jfinal.qy.weixin.sdk.api.ApiConfig;
 import com.jfinal.qy.weixin.sdk.api.ApiResult;
 import com.jfinal.qy.weixin.sdk.api.ConBatchApi;
@@ -37,7 +38,7 @@ import com.jfinal.qy.weixin.sdk.msg.send.Text;
  */
 public class QyWeixinMsgController extends MsgController {
 
-	static Log log =  Log.getLog(QyWeixinMsgController.class);
+	static Logger logger = Logger.getLogger(QyWeixinMsgController.class);
 	private static final String helpStr = "\t发送 help 可获得帮助，发送 \"美女\" 可看美女 ，发送新闻可看新版本消息。公众号功能持续完善中";
 
 	public ApiConfig getApiConfig() {
@@ -47,6 +48,7 @@ public class QyWeixinMsgController extends MsgController {
 		ac.setToken(PropKit.get("token"));
 		ac.setCorpId(PropKit.get("corpId"));
 		ac.setCorpSecret(PropKit.get("secret"));
+		ac.setAgentId(PropKit.get("agentId"));
 		
 		/**
 		 *  是否对消息进行加密，对应于微信平台的消息加解密方式：
@@ -183,7 +185,7 @@ public class QyWeixinMsgController extends MsgController {
 		}// 如果为取消关注事件，将无法接收到传回的信息
 		if (InFollowEvent.EVENT_INFOLLOW_UNSUBSCRIBE.equals(inFollowEvent.getEvent()))
 		{
-			log.debug("取消关注：" + inFollowEvent.getFromUserName());
+			logger.debug("取消关注：" + inFollowEvent.getFromUserName());
 		}
 	}
 	/**

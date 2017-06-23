@@ -1,16 +1,11 @@
 package com.jfinal.qy.weixin.sdk.jfinal;
 
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
-import org.dom4j.DocumentHelper;
-import org.dom4j.Element;
+import org.apache.log4j.Logger;
 
 import com.jfinal.aop.Interceptor;
 import com.jfinal.aop.Invocation;
 import com.jfinal.core.Controller;
-import com.jfinal.kit.HttpKit;
 import com.jfinal.kit.StrKit;
-import com.jfinal.log.Log;
 import com.jfinal.qy.weixin.sdk.api.ApiConfigKit;
 import com.jfinal.qy.weixin.sdk.kit.SignatureCheckKit;
 
@@ -24,7 +19,7 @@ import com.jfinal.qy.weixin.sdk.kit.SignatureCheckKit;
  */
 public class MsgInterceptor implements Interceptor {
 	
-	private static final Log log =  Log.getLog(MsgInterceptor.class);
+	private static final Logger log =  Logger.getLogger(MsgInterceptor.class);
 	
 	public void intercept(Invocation inv) {
 		Controller controller = inv.getController();
@@ -47,13 +42,14 @@ public class MsgInterceptor implements Interceptor {
 				log.error("对开发测试更加友好");
 				inv.invoke();
 			} else {
-				// 签名检测
-				if (checkSignature(controller)) {
-					inv.invoke();
-				}
-				else {
-					controller.renderText("签名验证失败，请确定是微信服务器在发送消息过来");
-				}
+				inv.invoke();
+//				// 签名检测
+//				if (checkSignature(controller)) {
+//					inv.invoke();
+//				}
+//				else {
+//					controller.renderText("签名验证失败，请确定是微信服务器在发送消息过来");
+//				}
 			}
 			
 		}
@@ -62,34 +58,7 @@ public class MsgInterceptor implements Interceptor {
 		}
 	}
 	
-	/**
-	 * 检测签名
-	 */
-	private boolean checkSignature(Controller controller) {
-		String signature = controller.getPara("msg_signature");
-		String timestamp = controller.getPara("timestamp");
-		String nonce = controller.getPara("nonce");
-		String content=getEncrypt(controller);
-		
-		
-		if (StrKit.isBlank(signature) || StrKit.isBlank(timestamp) || StrKit.isBlank(nonce)) {
-			controller.renderText("check signature failure");
-			return false;
-		}
-		
-		if (SignatureCheckKit.me.checkSignature(signature, timestamp, nonce ,content)) {
-			return true;
-		}
-		else {
-			log.error("check signature failure: " +
-					" signature = " + controller.getPara("msg_signature") +
-					" timestamp = " + controller.getPara("timestamp") +
-					" nonce = " + controller.getPara("nonce")+
-					" content = " + getEncrypt(controller));
-			
-			return false;
-		}
-	}
+	
 	
 	/**
 	 * 是否为开发者中心保存服务器配置的请求
@@ -114,20 +83,7 @@ public class MsgInterceptor implements Interceptor {
 	}
 	
 	
-	private String getEncrypt(Controller c){
-		try {
-			String xml=HttpKit.readIncommingRequestData(c.getRequest());
-			Document doc = DocumentHelper.parseText(xml);
-			Element root = doc.getRootElement();
-			String content=root.elementText("Encrypt");
-			
-			return content;
-		} catch (DocumentException e) {
-		}
-		
-		return null;
-		
-	}
+	
 }
 
 

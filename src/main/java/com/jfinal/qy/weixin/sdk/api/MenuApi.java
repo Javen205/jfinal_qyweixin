@@ -1,6 +1,8 @@
 
 package com.jfinal.qy.weixin.sdk.api;
 
+import com.jfinal.kit.HttpKit;
+import com.jfinal.qy.weixin.sdk.kit.ParaMap;
 import com.jfinal.qy.weixin.sdk.utils.HttpUtils;
 
 /**
@@ -8,15 +10,15 @@ import com.jfinal.qy.weixin.sdk.utils.HttpUtils;
  */
 public class MenuApi {
 	
-	private static String getMenu = "https://qyapi.weixin.qq.com/cgi-bin/menu/get?access_token=ACCESS_TOKEN&agentid=AGENTID";
-	private static String createMenu = "https://qyapi.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN&agentid=AGENTID";
-	private static String deleteMenu ="https://qyapi.weixin.qq.com/cgi-bin/menu/delete?access_token=ACCESS_TOKEN&agentid=AGENTID";
+	private static String getMenu = "https://qyapi.weixin.qq.com/cgi-bin/menu/get";
+	private static String createMenu = "https://qyapi.weixin.qq.com/cgi-bin/menu/create";
+	private static String deleteMenu ="https://qyapi.weixin.qq.com/cgi-bin/menu/delete";
 	/**
 	 * 查询菜单
 	 */
 	public static ApiResult getMenu(String agentid) {
-		getMenu=getMenu.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()).replace("AGENTID", agentid);
-		String jsonResult = HttpUtils.get(getMenu + AccessTokenApi.getAccessTokenStr());
+		ParaMap pm=ParaMap.create("access_token", AccessTokenApi.getAccessTokenStr()).put("agentid", agentid);
+		String jsonResult = HttpUtils.get(getMenu,pm.getData());
 		return new ApiResult(jsonResult);
 	}
 	
@@ -24,14 +26,16 @@ public class MenuApi {
 	 * 创建菜单
 	 */
 	public static ApiResult createMenu(String jsonStr,String agentid) {
-		createMenu=createMenu.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()).replace("AGENTID", agentid);
-		String jsonResult = HttpUtils.post(createMenu + AccessTokenApi.getAccessTokenStr(), jsonStr);
+		ParaMap pm=ParaMap.create("access_token", AccessTokenApi.getAccessTokenStr()).put("agentid", agentid);
+		String jsonResult = HttpKit.post(createMenu,pm.getData(), jsonStr);
 		return new ApiResult(jsonResult);
 	}
-	
+	/**
+	 * 删除菜单
+	 */
 	public static ApiResult deleteMenu(String agentid){
-		deleteMenu=deleteMenu.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()).replace("AGENTID", agentid);
-		String jsonResult = HttpUtils.get(deleteMenu + AccessTokenApi.getAccessTokenStr());
+		ParaMap pm=ParaMap.create("access_token", AccessTokenApi.getAccessTokenStr()).put("agentid", agentid);
+		String jsonResult = HttpUtils.get(deleteMenu ,pm.getData());
 		return new ApiResult(jsonResult);
 	}
 }

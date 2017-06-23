@@ -1,13 +1,25 @@
 # jfinal_qyweixin 企业微信号极速开发
 
-jfinal_qyweixin是基于 JFinal 的微信公众号极速开发 SDK，只需浏览 Demo 代码即可进行极速开发，此项目是由 JFinal Weixin 1.5 版本修改而来。
-
-###1、帮助文档持续更新当中 [wiki](https://github.com/Javen205/jfinal_qyweixin/wiki)<br /> 
+jfinal_qyweixin是基于 jfinal_weixin的二次开发。
 
 
-###2、更多支持
-* 微信开发交流群：148540125
-* 关注微信公众号：javenlife
 
-[![javenlife]](http://www.cnblogs.com/zyw-205520/)  
-[javenlife]:http://7j1wfp.com1.z0.glb.clouddn.com/javenlife.jpg "关注微信公众号获得更多支持"
+###1、开源地址
+
+[github:https://github.com/Javen205/jfinal_qyweixin](https://github.com/Javen205/jfinal_qyweixin)
+
+[oscgit:http://git.oschina.net/javen205/jfinal_qyweixin](http://git.oschina.net/javen205/jfinal_qyweixin)
+
+###2、鸣谢
+
+- [jfinal-weixin](https://git.oschina.net/jfinal/jfinal-weixin.git)
+
+- [jfinal](https://git.oschina.net/jfinal/jfinal.git)
+
+###3、更多支持
+
+- 交流群：[![QQ](http://pub.idqqimg.com/wpa/images/group.png)](https://jq.qq.com/?_wv=1027&k=47koFFR)(备注项目名称、进群发广告T)
+- Email：javen205@126.com
+
+<img src="http://img.blog.csdn.net/20170425211154361?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenl3X2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width = "200" alt="如果对你有帮助，请随意打赏支持" align=center />
+

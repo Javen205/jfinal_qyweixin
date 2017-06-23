@@ -10,6 +10,7 @@ import com.jfinal.core.JFinal;
 import com.jfinal.kit.PropKit;
 import com.jfinal.qy.weixin.sdk.api.ApiConfigKit;
 import com.jfinal.render.ViewType;
+import com.jfinal.template.Engine;
 
 public class QyWeiXinConfig extends JFinalConfig{
 	/**
@@ -53,14 +54,7 @@ public class QyWeiXinConfig extends JFinalConfig{
 	 * 配置插件
 	 */
 	public void configPlugin(Plugins me) {
-//		// 配置C3p0数据库连接池插件
-//		C3p0Plugin c3p0Plugin = new C3p0Plugin(PropKit.get("jdbcUrl"), PropKit.get("user"), PropKit.get("password").trim());
-//		me.add(c3p0Plugin);
-//		
-//		// 配置ActiveRecord插件
-//		ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
-//		me.add(arp);
-//		arp.addMapping("blog", Blog.class);	// 映射blog 表到 Blog模型
+
 	}
 	
 	/**
@@ -83,6 +77,10 @@ public class QyWeiXinConfig extends JFinalConfig{
 	 */
 	public static void main(String[] args) {
 		JFinal.start("src/main/webapp", 8080, "/", 5);//启动配置项
+	}
+	@Override
+	public void configEngine(Engine me) {
+		
 	}
 
 }

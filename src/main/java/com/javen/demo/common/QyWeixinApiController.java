@@ -5,10 +5,13 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.jfinal.kit.JsonKit;
 import com.jfinal.kit.PropKit;
-import com.jfinal.log.Log;
 import com.jfinal.qy.weixin.sdk.api.AgentApi;
 import com.jfinal.qy.weixin.sdk.api.ApiConfig;
 import com.jfinal.qy.weixin.sdk.api.ApiResult;
@@ -23,6 +26,7 @@ import com.jfinal.qy.weixin.sdk.api.OAuthApi;
 import com.jfinal.qy.weixin.sdk.api.SendMessageApi;
 import com.jfinal.qy.weixin.sdk.api.media.MediaApi;
 import com.jfinal.qy.weixin.sdk.api.media.MediaApi.MediaType;
+import com.jfinal.qy.weixin.sdk.api.media.MediaFile;
 import com.jfinal.qy.weixin.sdk.jfinal.ApiController;
 import com.jfinal.qy.weixin.sdk.menu.MenuManager;
 import com.jfinal.qy.weixin.sdk.msg.chat.ChatReceiver;
@@ -38,7 +42,7 @@ import com.jfinal.qy.weixin.sdk.msg.send.QiYeTextMsg;
 import com.jfinal.qy.weixin.sdk.msg.send.Text;
 
 public class QyWeixinApiController extends ApiController {
-	private static final Log log =  Log.getLog(QyWeixinApiController.class);
+	private static final Logger log =  Logger.getLogger(QyWeixinApiController.class);
 	/**
 	 * 如果要支持多公众账号，只需要在此返回各个公众号对应的  ApiConfig 对象即可
 	 * 可以通过在请求 url 中挂参数来动态从数据库中获取 ApiConfig 属性值
@@ -104,10 +108,10 @@ public class QyWeixinApiController extends ApiController {
 	 */
 	public void sendImage(){
 		QiYeImageMsg image=new QiYeImageMsg();
-		image.setAgentid("16");
+		image.setAgentid("22");
 		image.setSafe("0");
 		image.setTouser("Javen");
-		image.setMedia_id("1s5aCsU1-sPwQMcf_exgRGliqQ6RMwpNv0sHm6J-e1ICIQdC6q4rTX72Ob-0hqgITdDK3twbFtJ_XRilP9zWvhg");
+		image.setMedia_id("1jwHxr9qU40IcyOMPoeQDtBHa9pvqJZGofzUhA1Yhd2AWxRCjrgyGZjNSKwZvKsqSDWeoWmNF3tkc05aBbXVmsg");
 		ApiResult apiResult = SendMessageApi.sendImageMsg(image);
 		renderText(apiResult.getJson());
 	}
@@ -128,14 +132,14 @@ public class QyWeixinApiController extends ApiController {
 	 * 获取菜单
 	 */
 	public void getMenuApi(){
-		renderText(MenuApi.getMenu("16").getJson());
+		renderText(MenuApi.getMenu("22").getJson());
 	}
 	
 	/**
 	 * 删除菜单
 	 */
 	public void deleteMenuApi(){
-		renderText(MenuApi.deleteMenu("16").getJson());
+		renderText(MenuApi.deleteMenu("22").getJson());
 	}
 	/**
 	 * 创建菜单
@@ -144,7 +148,7 @@ public class QyWeixinApiController extends ApiController {
 		String json=JsonKit.toJson(MenuManager.getMenu()).toString();
 		log.error(json);
 		System.out.println(json);
-		renderText(MenuApi.createMenu(json,"16").getJson());
+		renderText(MenuApi.createMenu(json,"22").getJson());
 	}
 	
 	/**
@@ -163,7 +167,7 @@ public class QyWeixinApiController extends ApiController {
 		String data="{\"name\": \"XX研发中心\",\""
 	   +"parentid\": \"1\",\""
 	   +"order\": \"2\",\""
-	   +"id\": \"6\"}";
+	   +"id\": \"3\"}";
 		ApiResult apiResult=ConDepartmentApi.createDepartment(data);
 		
 		log.error(data);
@@ -202,14 +206,14 @@ public class QyWeixinApiController extends ApiController {
 	 * 创建成员
 	 */
 	public void createUser(){
-		String json="{\"userid\": \"lisi\","
-   +"\"name\": \"李四\","
-   +"\"department\": [1, 2],"
+		String json="{\"userid\": \"Javen205\","
+   +"\"name\": \"Javen205\","
+   +"\"department\": [3],"
    +"\"position\": \"产品经理\","
-   +"\"mobile\": \"1999\","
+   +"\"mobile\": \"\","
    +"\"gender\": \"1\","
-   +"\"email\": \"lisi@gzdev.com\","
-   +"\"weixinid\": \"lisi4dev\","
+   +"\"email\": \"\","
+   +"\"weixinid\": \"Javen205\","
   // +"\"avatar_mediaid\": \"2-G6nrLmr5EC3MNb_-zL1dDdzkd0p7cNliYu9V5w7o8K0\","
    +"\"extattr\": {\"attrs\":[{\"name\":\"爱好\",\"value\":\"旅游\"},{\"name\":\"卡号\",\"value\":\"1234567234\"}]}}";
 		System.out.println(json);
@@ -221,14 +225,14 @@ public class QyWeixinApiController extends ApiController {
 	 * 更新成员
 	 */
 	public void updateUser(){
-		String json="{\"userid\": \"zhangsan\","
-   +"\"name\": \"张三zhangsan\","
-   +"\"department\": [1, 4],"
+		String json="{\"userid\": \"Javen205\","
+   +"\"name\": \"Javen205_test\","
+   +"\"department\": [3],"
    +"\"position\": \"产品经理\","
-   +"\"mobile\": \"15913215421\","
+   +"\"mobile\": \"\","
    +"\"gender\": \"1\","
-   +"\"email\": \"zhangsan@gzdev.com\","
-   +"\"weixinid\": \"zhangsan4dev\","
+   +"\"email\": \"342796937@qq.com\","
+   +"\"weixinid\": \"Javen205\","
   // +"\"avatar_mediaid\": \"2-G6nrLmr5EC3MNb_-zL1dDdzkd0p7cNliYu9V5w7o8K0\","
    +"\"extattr\": {\"attrs\":[{\"name\":\"爱好\",\"value\":\"旅游\"},{\"name\":\"卡号\",\"value\":\"1234567234\"}]}}";
 		System.out.println(json);
@@ -239,7 +243,7 @@ public class QyWeixinApiController extends ApiController {
 	 * 删除成员
 	 */
 	public void deleteUser(){
-		ApiResult apiResult = ConUserApi.deleteUser("zhangsan");
+		ApiResult apiResult = ConUserApi.deleteUser("lisi");
 		renderText(apiResult.getJson());
 	}
 	/**
@@ -263,13 +267,28 @@ public class QyWeixinApiController extends ApiController {
 	 */
 	public void getDepartmentUserList(){
 		ApiResult apiResult = ConUserApi.getDepartmentUserList("1", "1", "0");
+		System.out.println(apiResult.getJson());
+		if (apiResult.isSucceed()) {
+			JSONObject object= JSON.parseObject(apiResult.getJson());
+			JSONArray jsonArray = object.getJSONArray("userlist");
+			if (null!=jsonArray && jsonArray.size()>0) {
+				for (int i = 0; i < jsonArray.size(); i++) {
+					JSONObject userObject = jsonArray.getJSONObject(i);
+					User user = JSON.toJavaObject(userObject, User.class);
+					System.out.println(user.toString());
+				}
+			}
+			
+		}
+		
+		
 		renderText(apiResult.getJson());
 	}
 	/**
 	 * 邀请成员关注 测试貌似只能使用邮箱要求
 	 */
 	public void inviteUser(){
-		String data="{\"userid\":\"HLH\"}";
+		String data="{\"userid\":\"Javen205\"}";
 		System.out.println(data);
 		ApiResult apiResult = ConUserApi.inviteUser(data);
 		renderText(apiResult.getJson());
@@ -368,13 +387,15 @@ public class QyWeixinApiController extends ApiController {
 		renderText(apiResult.getJson());
 	}
 	
-	
+	/**
+	 * 1jwHxr9qU40IcyOMPoeQDtBHa9pvqJZGofzUhA1Yhd2AWxRCjrgyGZjNSKwZvKsqSDWeoWmNF3tkc05aBbXVmsg
+	 */
 	public void uploadImage(){
 		ApiResult apiResult=MediaApi.uploadMedia(MediaType.IMAGE, new File("/Users/Javen/Downloads/网络微生活.jpg"));
 		String json = apiResult.getJson();
 		String mediaId=JSON.parseObject(json).getString("media_id");
 		QiYeImageMsg image=new QiYeImageMsg(mediaId);
-		image.setAgentid("16");
+		image.setAgentid("22");
 		image.setSafe("0");
 		image.setTouser("Javen");
 		ApiResult sendImageMsg = SendMessageApi.sendImageMsg(image);
@@ -383,6 +404,24 @@ public class QyWeixinApiController extends ApiController {
 	}
 	
 	
+	public void getMediaDate()
+	{
+		try {
+			MediaFile mediaFile = MediaApi.getMedia("1jwHxr9qU40IcyOMPoeQDtBHa9pvqJZGofzUhA1Yhd2AWxRCjrgyGZjNSKwZvKsqSDWeoWmNF3tkc05aBbXVmsg");
+			renderText(mediaFile.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void getMaterialCount(){
+		ApiResult apiResult = MediaApi.getMaterialCount("22");
+		renderText(apiResult.getJson());
+	}
+	public void batchGetMaterial(){
+		ApiResult apiResult = MediaApi.batchGetMaterial(MediaType.IMAGE, 0, 20,22);
+		renderText(apiResult.getJson());
+	}
 	public void updateSyncUser(){
 		String data="{"
 			+"\"media_id\":\"1g45y7tvRx9dyk3jnaiMl5XR48dBcrPkl3SxfNJYC4mf3AYb6yLqs_dG1mK1mXVEzQ5zOprkWoF01x2uP290E2g\","
@@ -402,7 +441,7 @@ public class QyWeixinApiController extends ApiController {
 	 * 获取企业号应用
 	 */
 	public void getAgent(){
-		ApiResult apiResult=AgentApi.getAgent("16");
+		ApiResult apiResult=AgentApi.getAgent("22");
 		renderText(apiResult.getJson());
 	}
 	/**
@@ -410,7 +449,7 @@ public class QyWeixinApiController extends ApiController {
 	 */
 	public void setAgent(){
 		String data="{"+
-		   "\"agentid\": \"16\","+
+		   "\"agentid\": \"22\","+
 		   "\"report_location_flag\": \"1\","+
 		  // "\"logo_mediaid\": \"xxxxx\","+
 		   "\"name\": \"智慧云端日记\","+

@@ -25,20 +25,20 @@ public class AccessTokenApi {
 	// "https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=id&corpsecret=secrect";
 	private static String url = "https://qyapi.weixin.qq.com/cgi-bin/gettoken";
 	
-	// 利用 appId 与 accessToken 建立关联，支持多账户
+	// 企业号每个应用的access_token应独立存储，此处用secret作为区分应用的标识
 	static IAccessTokenCache accessTokenCache = ApiConfigKit.getAccessTokenCache();
 	
 	/**
 	 * 从缓存中获取 access token，如果未取到或者 access token 不可用则先更新再获取
 	 */
 	public static AccessToken getAccessToken() {
-		String corpId = ApiConfigKit.getApiConfig().getCorpId();
-		AccessToken result = accessTokenCache.get(corpId);
+		String corpsecret = ApiConfigKit.getApiConfig().getCorpSecret();
+		AccessToken result = accessTokenCache.get(corpsecret);
 		if (result != null && result.isAvailable())
 			return result;
 		
 		refreshAccessToken();
-		return accessTokenCache.get(corpId);
+		return accessTokenCache.get(corpsecret);
 	}
 	
 	/**
@@ -68,7 +68,7 @@ public class AccessTokenApi {
 		});
 		
 		// 三次请求如果仍然返回了不可用的 access token 仍然 put 进去，便于上层通过 AccessToken 中的属性判断底层的情况
-		accessTokenCache.set(ac.getCorpId(), result);
+		accessTokenCache.set(corpsecret, result);
 	}
 
 }

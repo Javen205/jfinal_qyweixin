@@ -22,6 +22,7 @@ public class QiYeTextMsg extends QiYeBaseMsg {
 
 	public QiYeTextMsg(Text text) {
 		this.text = text;
+        this.msgtype=MessageType.text.name();
 	}
 
 	public Text getText() {

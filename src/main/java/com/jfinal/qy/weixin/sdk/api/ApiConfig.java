@@ -14,6 +14,7 @@ public class ApiConfig {
 	private String token = null;
 	private String corpId = null;
 	private String corpSecret=null;
+	private String agentId = null;
 	private String encodingAesKey = null;
 	private boolean messageEncrypt = false;	// 消息加密与否
 	
@@ -61,9 +62,18 @@ public class ApiConfig {
 		this.corpId = corpId;
 	}
 	
-	
-	
-	
+	public String getAgentId() {
+		if (agentId == null)
+			throw new IllegalStateException("agentId 未被赋值");
+		return agentId;
+	}
+
+	public void setAgentId(String agentId) {
+		if (agentId == null)
+			throw new IllegalArgumentException("agentId 值不能为 null");
+		this.agentId = agentId;
+	}
+
 	public String getCorpSecret() {
 		return corpSecret;
 	}

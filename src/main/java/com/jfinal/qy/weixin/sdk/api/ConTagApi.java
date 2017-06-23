@@ -5,6 +5,7 @@
  */
 package com.jfinal.qy.weixin.sdk.api;
 
+import com.jfinal.qy.weixin.sdk.kit.ParaMap;
 import com.jfinal.qy.weixin.sdk.utils.HttpUtils;
 
 /**
@@ -13,13 +14,13 @@ import com.jfinal.qy.weixin.sdk.utils.HttpUtils;
  * 管理通讯录>>管理标签
  */
 public class ConTagApi {
-	private static String createUrl="https://qyapi.weixin.qq.com/cgi-bin/tag/create?access_token=ACCESS_TOKEN";
-	private static String uploadUrl="https://qyapi.weixin.qq.com/cgi-bin/tag/update?access_token=ACCESS_TOKEN";
-	private static String deleteUrl="https://qyapi.weixin.qq.com/cgi-bin/tag/delete?access_token=ACCESS_TOKEN&tagid=TAGID";
-	private static String getUrl="https://qyapi.weixin.qq.com/cgi-bin/tag/get?access_token=ACCESS_TOKEN&tagid=TAGID";
-	private static String addTagUsersUrl="https://qyapi.weixin.qq.com/cgi-bin/tag/addtagusers?access_token=ACCESS_TOKEN";
-	private static String delTagUsersUrl="https://qyapi.weixin.qq.com/cgi-bin/tag/deltagusers?access_token=ACCESS_TOKEN";
-	private static String getTagListUrl="https://qyapi.weixin.qq.com/cgi-bin/tag/list?access_token=ACCESS_TOKEN";
+	private static String createUrl="https://qyapi.weixin.qq.com/cgi-bin/tag/create?access_token=";
+	private static String uploadUrl="https://qyapi.weixin.qq.com/cgi-bin/tag/update?access_token=";
+	private static String deleteUrl="https://qyapi.weixin.qq.com/cgi-bin/tag/delete";
+	private static String getUrl="https://qyapi.weixin.qq.com/cgi-bin/tag/get";
+	private static String addTagUsersUrl="https://qyapi.weixin.qq.com/cgi-bin/tag/addtagusers?access_token=";
+	private static String delTagUsersUrl="https://qyapi.weixin.qq.com/cgi-bin/tag/deltagusers?access_token=";
+	private static String getTagListUrl="https://qyapi.weixin.qq.com/cgi-bin/tag/list?access_token=";
 	
 	
 	/**
@@ -33,8 +34,7 @@ public class ConTagApi {
 	 * @return
 	 */
 	public static ApiResult createTag(String data){
-		createUrl=createUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonResult=HttpUtils.post(createUrl, data);
+		String jsonResult=HttpUtils.post(createUrl +  AccessTokenApi.getAccessTokenStr(), data);
 		return new ApiResult(jsonResult);
 	}
 	/**
@@ -47,8 +47,7 @@ public class ConTagApi {
 	 * @return
 	 */
 	public static ApiResult updateTag(String data){
-		uploadUrl=uploadUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonResult=HttpUtils.post(uploadUrl, data);
+		String jsonResult=HttpUtils.post(uploadUrl + AccessTokenApi.getAccessTokenStr(), data);
 		return new ApiResult(jsonResult);
 	}
 	
@@ -58,8 +57,8 @@ public class ConTagApi {
 	 * @return
 	 */
 	public static ApiResult deleteTag(String tagid){
-		deleteUrl=deleteUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()).replace("TAGID", tagid);
-		String jsonResult=HttpUtils.get(deleteUrl);
+		ParaMap pm=ParaMap.create("access_token", AccessTokenApi.getAccessTokenStr()).put("tagid", tagid);
+		String jsonResult=HttpUtils.get(deleteUrl,pm.getData());
 		return new ApiResult(jsonResult);
 	}
 	/**
@@ -68,8 +67,8 @@ public class ConTagApi {
 	 * @return
 	 */
 	public static ApiResult getTagUser(String tagid){
-		getUrl=getUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()).replace("TAGID", tagid);
-		String jsonResult=HttpUtils.get(getUrl);
+		ParaMap pm=ParaMap.create("access_token", AccessTokenApi.getAccessTokenStr()).put("tagid", tagid);
+		String jsonResult=HttpUtils.get(getUrl,pm.getData());
 		return new ApiResult(jsonResult);
 	}
 	
@@ -84,8 +83,7 @@ public class ConTagApi {
 	 * @return
 	 */
 	public static ApiResult addTagUsers(String data){
-		addTagUsersUrl=addTagUsersUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonResult=HttpUtils.post(addTagUsersUrl,data);
+		String jsonResult=HttpUtils.post(addTagUsersUrl + AccessTokenApi.getAccessTokenStr(),data);
 		return new ApiResult(jsonResult);
 	}
 	/**
@@ -99,8 +97,7 @@ public class ConTagApi {
 	 * @return
 	 */
 	public static ApiResult deleteTagUsers(String data){
-		delTagUsersUrl=delTagUsersUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonResult=HttpUtils.post(delTagUsersUrl,data);
+		String jsonResult=HttpUtils.post(delTagUsersUrl + AccessTokenApi.getAccessTokenStr(),data);
 		return new ApiResult(jsonResult);
 	}
 	/**
@@ -108,8 +105,7 @@ public class ConTagApi {
 	 * @return
 	 */
 	public static ApiResult getTagList(){
-		getTagListUrl=getTagListUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonResult=HttpUtils.get(getTagListUrl);
+		String jsonResult=HttpUtils.get(getTagListUrl + AccessTokenApi.getAccessTokenStr());
 		return new ApiResult(jsonResult);
 	}
 	

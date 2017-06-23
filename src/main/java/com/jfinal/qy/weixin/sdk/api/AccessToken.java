@@ -6,7 +6,6 @@ import java.util.Map;
 
 import com.jfinal.qy.weixin.sdk.utils.JsonUtils;
 import com.jfinal.qy.weixin.sdk.utils.RetryUtils.ResultCheck;
-import com.jfinal.qy.weixin.sdk.utils.ReturnCode;
 
 
 /**
@@ -29,7 +28,7 @@ public class AccessToken implements ResultCheck, Serializable {
 		this.json = jsonStr;
 
 		try {
-			Map<String, Object> temp = JsonUtils.decode(jsonStr, Map.class);
+			Map<String, Object> temp = JsonUtils.parse(jsonStr, Map.class);
 			access_token = (String) temp.get("access_token");
 			expires_in = getInt(temp, "expires_in");
 			errcode = getInt(temp, "errcode");
@@ -50,7 +49,7 @@ public class AccessToken implements ResultCheck, Serializable {
 	public boolean isAvailable() {
 		if (expiredTime == null)
 			return false;
-		if (errcode != null)
+		if (errcode != 0)
 			return false;
 		if (expiredTime < System.currentTimeMillis())
 			return false;

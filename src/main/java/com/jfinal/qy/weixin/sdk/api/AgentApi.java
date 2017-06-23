@@ -5,6 +5,7 @@
  */
 package com.jfinal.qy.weixin.sdk.api;
 
+import com.jfinal.qy.weixin.sdk.kit.ParaMap;
 import com.jfinal.qy.weixin.sdk.utils.HttpUtils;
 
 /**
@@ -14,9 +15,9 @@ import com.jfinal.qy.weixin.sdk.utils.HttpUtils;
  * 管理企业号应用
  */
 public class AgentApi {
-	private static String getUrl="https://qyapi.weixin.qq.com/cgi-bin/agent/get?access_token=ACCESS_TOKEN&agentid=AGENTID";
-	private static String setUrl="https://qyapi.weixin.qq.com/cgi-bin/agent/set?access_token=ACCESS_TOKEN";
-	private static String getListUrl="https://qyapi.weixin.qq.com/cgi-bin/agent/list?access_token=ACCESS_TOKEN";
+	private static String getUrl="https://qyapi.weixin.qq.com/cgi-bin/agent/get";
+	private static String setUrl="https://qyapi.weixin.qq.com/cgi-bin/agent/set?access_token=";
+	private static String getListUrl="https://qyapi.weixin.qq.com/cgi-bin/agent/list?access_token=";
 	
 	/**
 	 * 获取企业号应用
@@ -25,8 +26,9 @@ public class AgentApi {
 	 * 该API用于获取企业号某个应用的基本信息，包括头像、<br/>昵称、帐号类型、认证类型、可见范围等信息
 	 */
 	public static ApiResult getAgent(String agentid){
-		getUrl=getUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()).replace("AGENTID", agentid);
-		String jsonResult=HttpUtils.get(getUrl);
+		ParaMap pm = ParaMap.create("access_token", AccessTokenApi.getAccessTokenStr())
+				.put("agentid", agentid);
+		String jsonResult=HttpUtils.get(getUrl,pm.getData());
 		return new ApiResult(jsonResult);
 	}
 	/**
@@ -46,8 +48,7 @@ public class AgentApi {
 	 * 该API用于设置企业应用的选项设置信息，<br/>如：地理位置上报等。第三方服务商不能调用该接口设置授权的主页型应用。
 	 */
 	public static ApiResult setAgent(String data){
-		setUrl=setUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonResult=HttpUtils.post(setUrl,data);
+		String jsonResult=HttpUtils.post(setUrl +AccessTokenApi.getAccessTokenStr() ,data);
 		return new ApiResult(jsonResult);
 	}
 	
@@ -57,8 +58,7 @@ public class AgentApi {
 	 * 该API 用于获取secret所在管理组内的应用概况，<br/>会返回管理组内应用的id及名称、头像等信息
 	 */
 	public static ApiResult getListAgent(){
-		getListUrl=getListUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonResult=HttpUtils.get(getListUrl);
+		String jsonResult=HttpUtils.get(getListUrl+ AccessTokenApi.getAccessTokenStr());
 		return new ApiResult(jsonResult);
 	}
 }

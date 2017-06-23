@@ -3,7 +3,6 @@ package com.jfinal.qy.weixin.sdk.api.media;
 import java.io.BufferedInputStream;
 
 /**
- * 素材文件，参考自____′↘夏悸 wechat
  * @author Javen
  */
 public class MediaFile {
@@ -57,4 +56,12 @@ public class MediaFile {
 	public void setError(String error) {
 		this.error = error;
 	}
+	@Override
+	public String toString() {
+		return "MediaFile [fileName=" + fileName + ", fullName=" + fullName + ", suffix=" + suffix + ", contentLength="
+				+ contentLength + ", contentType=" + contentType + ", fileStream=" + fileStream + ", error=" + error
+				+ "]";
+	}
+	
+	
 }

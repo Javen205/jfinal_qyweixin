@@ -1,16 +1,22 @@
 package com.jfinal.qy.weixin.sdk.utils;
 
+import com.jfinal.log.Log;
+
 /**
  * 异常重试工具类
  * @author L.cm
  */
 public class RetryUtils {
 	
+	private static Log log = Log.getLog(RetryUtils.class);
+	
 	/**
 	 * 回调结果检查
 	 */
 	public interface ResultCheck {
 		boolean matching();
+		
+		String getJson();
 	}
 	
 	/**
@@ -26,10 +32,13 @@ public class RetryUtils {
 		for (int i = 0; i < retryLimit; i++) {
 			try {
 				v = retryCallable.call();
-				if (v.matching()) break;
 			} catch (Exception e) {
-				// ignore
+				if (log.isWarnEnabled()) {
+					log.warn("retry on " + (i + 1) + " times v = " + (v == null ? null : v.getJson()) , e);
+				}
 			}
+			if (v.matching()) break;
+			log.error("retry on " + (i + 1) + " times but not matching v = " + (v == null ? null : v.getJson()));
 		}
 		return v;
 	}
@@ -49,10 +58,13 @@ public class RetryUtils {
 		for (int i = 0; i < retryLimit; i++) {
 			try {
 				v = retryCallable.call();
-				if (v.matching()) break;
 			} catch (Exception e) {
-				Thread.sleep(sleepMillis);
+				if (log.isWarnEnabled()) {
+					log.warn("retry on " + (i + 1) + " times v = " + (v == null ? null : v.getJson()) , e);
+				}
 			}
+			if (v.matching()) break;
+			log.error("retry on " + (i + 1) + " times but not matching v = " + (v == null ? null : v.getJson()));
 		}
 		return v;
 	}

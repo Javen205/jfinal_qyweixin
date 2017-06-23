@@ -7,11 +7,14 @@ devMode = true
 token=Javen
 
 # 企业号用的账号
-corpId=wx2eb133cd5e352ac8
-secret=_dh3boGTWWy2pWHQ-YN7FGNfBfgtn6CWVCJAYtOKht8TuIfnKdZqg312sZaJjdfL
+#应用ID
+agentId = 16
+#以下两个值在设置>权限管理中查看
+corpId=	xxx
+secret= xxx
 
 #是否对消息进行加密，是否对消息进行加密，对应于微信平台的消息加解密方式，false支持明文模式及兼容模式，true支持安全模式及兼容模式
 encryptMessage=true
-encodingAesKey=sPqS4op3rKjOT7XbWJkDr5Kqq6v6oL3enZ8oY6hrK8b
+encodingAesKey=t0zAeMNFyc9YegTabTWSn1sxVSjonpQUVESYm4VtquM
 
-
+domain = http://qy.javen.1mfy.cn

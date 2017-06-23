@@ -128,7 +128,7 @@ public class MediaApi {
 	}
 	
 	// 获取素材列表
-	private static String batchget_material_url = "https://qyapi.weixin.qq.com/cgi-bin/material/batchget_material?access_token=";
+	private static String batchget_material_url = "https://qyapi.weixin.qq.com/cgi-bin/material/batchget?access_token=";
 	
 	/**
 	 * 获取素材列表

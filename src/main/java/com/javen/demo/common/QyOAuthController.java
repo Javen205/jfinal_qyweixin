@@ -8,11 +8,13 @@ package com.javen.demo.common;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
+import org.apache.log4j.Logger;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.jfinal.kit.PropKit;
-import com.jfinal.log.Log;
 import com.jfinal.qy.weixin.sdk.api.ApiConfig;
+import com.jfinal.qy.weixin.sdk.api.ApiConfigKit;
 import com.jfinal.qy.weixin.sdk.api.ApiResult;
 import com.jfinal.qy.weixin.sdk.api.OAuthApi;
 import com.jfinal.qy.weixin.sdk.jfinal.ApiController;
@@ -22,7 +24,7 @@ import com.jfinal.qy.weixin.sdk.jfinal.ApiController;
  * 2015年12月27日
  */
 public class QyOAuthController extends ApiController {
-	private Log logger=Log. getLog(QyOAuthController.class);
+	private Logger logger=Logger. getLogger(QyOAuthController.class);
 	/**
 	 * 如果要支持多公众账号，只需要在此返回各个公众号对应的  ApiConfig 对象即可
 	 * 可以通过在请求 url 中挂参数来动态从数据库中获取 ApiConfig 属性值
@@ -34,6 +36,7 @@ public class QyOAuthController extends ApiController {
 		ac.setToken(PropKit.get("token"));
 		ac.setCorpId(PropKit.get("corpId"));
 		ac.setCorpSecret(PropKit.get("secret"));
+		ac.setAgentId(PropKit.get("agentId"));
 				
 		
 		/**
@@ -47,8 +50,9 @@ public class QyOAuthController extends ApiController {
 	}
 	public void index(){
 		try {
-			String redirect_uri=URLEncoder.encode("http://javen.ngrok.natapp.cn/qyoauth2/code", "utf-8");
-			String codeUrl = OAuthApi.getCodeUrl(redirect_uri, "123");
+			String redirect_uri=URLEncoder.encode(PropKit.get("domain")+"/qyoauth2/code", "utf-8");
+			String codeUrl = OAuthApi.getCodeUrl(redirect_uri, "123",true);
+			System.out.println("codeUrl>>>"+codeUrl);
 			redirect(codeUrl);
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
@@ -59,11 +63,13 @@ public class QyOAuthController extends ApiController {
 		String userId =null;
 		String deviceId=null;
 		String openid=null;
+		String state = null;
 		if (!isParaBlank("code")) {
 			String code = getPara("code");
+			System.out.println("code>>>"+code);
 			logger.info("code:"+code);
 			if (!isParaBlank("state")) {
-				String state = getPara("state");
+				state = getPara("state");
 				logger.info(" state:"+state);
 				System.out.println(" state:"+state);
 			}
@@ -77,7 +83,7 @@ public class QyOAuthController extends ApiController {
 					System.out.println("userId:"+userId);
 					//如果获取userId为空 说明没有关注
 					if (userId!=null && !userId.equals("")) {
-						ApiResult toOpenIdApiResult = OAuthApi.ToOpenId("{\"userid\":\""+userId+"\",\"agentid\":16}");
+						ApiResult toOpenIdApiResult = OAuthApi.ToOpenId("{\"userid\":\""+userId+"\",\"agentid\":"+ApiConfigKit.getApiConfig().getAgentId()+"}");
 						System.out.println("toOpenIdApiResult:"+toOpenIdApiResult.getJson());
 						if (toOpenIdApiResult.isSucceed()) {
 							openid=JSON.parseObject(toOpenIdApiResult.getJson()).getString("openid");
@@ -97,8 +103,12 @@ public class QyOAuthController extends ApiController {
 					e.printStackTrace();
 				}
 			}
-			
-			renderText(userInfoApiResult.getJson()+">>>userId:"+userId+" deviceId:"+deviceId+" openid:"+openid);
+			setSessionAttr("userId", userId);
+			setSessionAttr("openId", openid);
+			if (state.equals("123") ) {
+				redirect("/");
+			}
+//			renderText(userInfoApiResult.getJson()+">>>userId:"+userId+" deviceId:"+deviceId+" openid:"+openid);
 		}
 	}
 }

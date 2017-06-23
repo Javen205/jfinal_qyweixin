@@ -5,6 +5,7 @@
  */
 package com.jfinal.qy.weixin.sdk.api;
 
+import com.jfinal.qy.weixin.sdk.kit.ParaMap;
 import com.jfinal.qy.weixin.sdk.utils.HttpUtils;
 
 /**
@@ -13,10 +14,10 @@ import com.jfinal.qy.weixin.sdk.utils.HttpUtils;
  * 管理通讯录>>管理部门
  */
 public class ConDepartmentApi {
-	private static String createUrl="https://qyapi.weixin.qq.com/cgi-bin/department/create?access_token=ACCESS_TOKEN";
-	private static String uploadUrl="https://qyapi.weixin.qq.com/cgi-bin/department/update?access_token=ACCESS_TOKEN";
-	private static String deleteUrl="https://qyapi.weixin.qq.com/cgi-bin/department/delete?access_token=ACCESS_TOKEN&id=ID";
-	private static String getUrl="https://qyapi.weixin.qq.com/cgi-bin/department/list?access_token=ACCESS_TOKEN&id=ID";
+	private static String createUrl="https://qyapi.weixin.qq.com/cgi-bin/department/create?access_token=";
+	private static String uploadUrl="https://qyapi.weixin.qq.com/cgi-bin/department/update?access_token=";
+	private static String deleteUrl="https://qyapi.weixin.qq.com/cgi-bin/department/delete";
+	private static String getUrl="https://qyapi.weixin.qq.com/cgi-bin/department/list";
 	
 	/**
 	 * 创建部门
@@ -31,8 +32,7 @@ public class ConDepartmentApi {
 	 * @return
 	 */
 	public static ApiResult createDepartment(String data){
-		createUrl=createUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonResult=HttpUtils.post(createUrl, data);
+		String jsonResult=HttpUtils.post(createUrl + AccessTokenApi.getAccessTokenStr(), data);
 		return new ApiResult(jsonResult);
 	}
 	/**
@@ -47,8 +47,7 @@ public class ConDepartmentApi {
 	 * @return
 	 */
 	public static ApiResult updateDepartment(String data){
-		uploadUrl=uploadUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonResult=HttpUtils.post(uploadUrl, data);
+		String jsonResult=HttpUtils.post(uploadUrl + AccessTokenApi.getAccessTokenStr(), data);
 		return new ApiResult(jsonResult);
 	}
 	
@@ -58,8 +57,8 @@ public class ConDepartmentApi {
 	 * @return
 	 */
 	public static ApiResult deleteDepartment(String id){
-		deleteUrl=deleteUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()).replace("ID", id);
-		String jsonResult=HttpUtils.get(deleteUrl);
+		ParaMap pm=ParaMap.create("access_token", AccessTokenApi.getAccessTokenStr()).put("id", id);
+		String jsonResult=HttpUtils.get(deleteUrl,pm.getData());
 		return new ApiResult(jsonResult);
 	}
 	/**
@@ -68,10 +67,8 @@ public class ConDepartmentApi {
 	 * @return
 	 */
 	public static ApiResult getDepartment(String id){
-		getUrl=getUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()).replace("ID", id);
-		String jsonResult=HttpUtils.get(getUrl);
+		ParaMap pm=ParaMap.create("access_token", AccessTokenApi.getAccessTokenStr()).put("id", id);
+		String jsonResult=HttpUtils.get(getUrl,pm.getData());
 		return new ApiResult(jsonResult);
 	}
-	
-	
 }

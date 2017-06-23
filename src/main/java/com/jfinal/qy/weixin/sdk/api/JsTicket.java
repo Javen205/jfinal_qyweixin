@@ -5,7 +5,6 @@ import java.util.Map;
 
 import com.jfinal.qy.weixin.sdk.utils.JsonUtils;
 import com.jfinal.qy.weixin.sdk.utils.RetryUtils.ResultCheck;
-import com.jfinal.qy.weixin.sdk.utils.ReturnCode;
 
 /**
  * JsTicket返回封装
@@ -27,7 +26,7 @@ public class JsTicket implements ResultCheck, Serializable {
 
 		try {
 			@SuppressWarnings("unchecked")
-			Map<String, Object> temp = JsonUtils.decode(jsonStr, Map.class);
+			Map<String, Object> temp = JsonUtils.parse(jsonStr, Map.class);
 			ticket = (String) temp.get("ticket");
 			expires_in = getInt(temp, "expires_in");
 			errcode = getInt(temp, "errcode");
@@ -56,9 +55,9 @@ public class JsTicket implements ResultCheck, Serializable {
 	}
 
 	public boolean isAvailable() {
-		if (expiredTime == null)
-			return false;
-		if (errcode != null)
+        if (expiredTime == null)
+    		return false;
+		if (!isSucceed())
 			return false;
 		if (expiredTime < System.currentTimeMillis())
 			return false;

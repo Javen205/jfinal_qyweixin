@@ -5,6 +5,8 @@
  */
 package com.jfinal.qy.weixin.sdk.api;
 
+import com.jfinal.kit.HttpKit;
+import com.jfinal.qy.weixin.sdk.kit.ParaMap;
 import com.jfinal.qy.weixin.sdk.utils.HttpUtils;
 
 /**
@@ -13,28 +15,28 @@ import com.jfinal.qy.weixin.sdk.utils.HttpUtils;
  * 管理通讯录>>管理成员
  */
 public class ConUserApi {
-	private static String createUrl="https://qyapi.weixin.qq.com/cgi-bin/user/create?access_token=ACCESS_TOKEN";
-	private static String uploadUrl="https://qyapi.weixin.qq.com/cgi-bin/user/update?access_token=ACCESS_TOKEN";
-	private static String deleteUrl="https://qyapi.weixin.qq.com/cgi-bin/user/delete?access_token=ACCESS_TOKEN&userid=USERID";
-	private static String batchDeleteUrl="https://qyapi.weixin.qq.com/cgi-bin/user/batchdelete?access_token=ACCESS_TOKEN";
-	private static String getUrl="https://qyapi.weixin.qq.com/cgi-bin/user/get?access_token=ACCESS_TOKEN&userid=USERID";
-	private static String getDepartmentSimpleListUrl="https://qyapi.weixin.qq.com/cgi-bin/user/simplelist?access_token=ACCESS_TOKEN&department_id=DEPARTMENT_ID&fetch_child=FETCH_CHILD&status=STATUS";
-	private static String getDepartmentListUrl="https://qyapi.weixin.qq.com/cgi-bin/user/list?access_token=ACCESS_TOKEN&department_id=DEPARTMENT_ID&fetch_child=FETCH_CHILD&status=STATUS";
-	private static String inviteUrl="https://qyapi.weixin.qq.com/cgi-bin/invite/send?access_token=ACCESS_TOKEN";
+	private static String createUrl="https://qyapi.weixin.qq.com/cgi-bin/user/create?access_token=";
+	private static String uploadUrl="https://qyapi.weixin.qq.com/cgi-bin/user/update?access_token=";
+	private static String deleteUrl="https://qyapi.weixin.qq.com/cgi-bin/user/delete";
+	private static String batchDeleteUrl="https://qyapi.weixin.qq.com/cgi-bin/user/batchdelete?access_token=";
+	private static String getUrl="https://qyapi.weixin.qq.com/cgi-bin/user/get";
+	private static String getDepartmentSimpleListUrl="https://qyapi.weixin.qq.com/cgi-bin/user/simplelist";
+	private static String getDepartmentListUrl="https://qyapi.weixin.qq.com/cgi-bin/user/list";
+	private static String inviteUrl="https://qyapi.weixin.qq.com/cgi-bin/invite/send?access_token=";
 	
 	
 	/**
 	 * 创建成员
 	 * @param data
 	 * {<br/>
-		   "userid": "zhangsan",<br/>
-		   "name": "张三",<br/>
-		   "department": [1, 2],<br/>
+		   "userid": "Javen205",<br/>
+		   "name": "Javen205",<br/>
+		   "department": [2],<br/>
 		   "position": "产品经理",<br/>
-		   "mobile": "15913215421",<br/>
+		   "mobile": "13545192175",<br/>
 		   "gender": "1",<br/>
-		   "email": "zhangsan@gzdev.com",<br/>
-		   "weixinid": "zhangsan4dev",<br/>
+		   "email": "",<br/>
+		   "weixinid": "Javen205",<br/>
 		   "avatar_mediaid": "2-G6nrLmr5EC3MNb_-zL1dDdzkd0p7cNliYu9V5w7o8K0",<br/>
 		   "extattr": {"attrs":[{"name":"爱好","value":"旅游"},{"name":"卡号","value":"1234567234"}]}
 		}<br/>
@@ -42,8 +44,7 @@ public class ConUserApi {
 	 * @return
 	 */
 	public static ApiResult createUser(String data){
-		createUrl=createUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonResult=HttpUtils.post(createUrl, data);
+		String jsonResult=HttpUtils.post(createUrl + AccessTokenApi.getAccessTokenStr(), data);
 		return new ApiResult(jsonResult);
 	}
 	/**
@@ -65,8 +66,7 @@ public class ConUserApi {
 	 * @return
 	 */
 	public static ApiResult updateUser(String data){
-		uploadUrl=uploadUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonResult=HttpUtils.post(uploadUrl, data);
+		String jsonResult=HttpUtils.post(uploadUrl + AccessTokenApi.getAccessTokenStr(), data);
 		return new ApiResult(jsonResult);
 	}
 	
@@ -76,8 +76,8 @@ public class ConUserApi {
 	 * @return
 	 */
 	public static ApiResult deleteUser(String userid){
-		deleteUrl=deleteUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()).replace("USERID", userid);
-		String jsonResult=HttpUtils.get(deleteUrl);
+		ParaMap pm=ParaMap.create("access_token", AccessTokenApi.getAccessTokenStr()).put("userid", userid);
+		String jsonResult=HttpUtils.get(deleteUrl,pm.getData());
 		return new ApiResult(jsonResult);
 	}
 	/**
@@ -90,8 +90,8 @@ public class ConUserApi {
 	 * @return
 	 */
 	public static ApiResult batchDeleteUser(String data){
-		batchDeleteUrl=batchDeleteUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonResult=HttpUtils.post(batchDeleteUrl,data);
+		String jsonResult=HttpKit.post(batchDeleteUrl + AccessTokenApi.getAccessTokenStr(),data);
+		
 		return new ApiResult(jsonResult);
 	}
 	/**
@@ -100,8 +100,8 @@ public class ConUserApi {
 	 * @return
 	 */
 	public static ApiResult getUser(String userid){
-		getUrl=getUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()).replace("USERID", userid);
-		String jsonResult=HttpUtils.get(getUrl);
+		ParaMap pm=ParaMap.create("access_token", AccessTokenApi.getAccessTokenStr()).put("userid", userid);
+		String jsonResult=HttpUtils.get(getUrl,pm.getData());
 		return new ApiResult(jsonResult);
 	}
 	/**
@@ -112,8 +112,8 @@ public class ConUserApi {
 	 * @return
 	 */
 	public static ApiResult getDepartmentUserSimpleList(String department_id,String fetch_child,String status){
-		getDepartmentSimpleListUrl=getDepartmentSimpleListUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()).replace("DEPARTMENT_ID", department_id).replace("FETCH_CHILD", fetch_child).replace("STATUS", status);
-		String jsonResult=HttpUtils.get(getDepartmentSimpleListUrl);
+		ParaMap pm=ParaMap.create("access_token", AccessTokenApi.getAccessTokenStr()).put("department_id", department_id).put("fetch_child", fetch_child).put("status", status);
+		String jsonResult=HttpUtils.get(getDepartmentSimpleListUrl,pm.getData());
 		return new ApiResult(jsonResult);
 	}
 	/**
@@ -124,8 +124,8 @@ public class ConUserApi {
 	 * @return
 	 */
 	public static ApiResult getDepartmentUserList(String department_id,String fetch_child,String status){
-		getDepartmentListUrl=getDepartmentListUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()).replace("DEPARTMENT_ID", department_id).replace("FETCH_CHILD", fetch_child).replace("STATUS", status);
-		String jsonResult=HttpUtils.get(getDepartmentListUrl);
+		ParaMap pm=ParaMap.create("access_token", AccessTokenApi.getAccessTokenStr()).put("department_id", department_id).put("fetch_child", fetch_child).put("status", status);
+		String jsonResult=HttpUtils.get(getDepartmentListUrl,pm.getData());
 		return new ApiResult(jsonResult);
 	}
 	/**
@@ -137,8 +137,7 @@ public class ConUserApi {
 	 * @return
 	 */
 	public static ApiResult inviteUser(String data){
-		inviteUrl=inviteUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonResult=HttpUtils.post(inviteUrl,data);
+		String jsonResult=HttpUtils.post(inviteUrl + AccessTokenApi.getAccessTokenStr(),data);
 		return new ApiResult(jsonResult);
 	}
 }

@@ -55,8 +55,7 @@ public class ConBatchApi {
 	 * @return
 	 */
 	public static ApiResult inviteUsers(String data){
-		batchInviteUsersUrl=batchInviteUsersUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonStr = HttpUtils.post(batchInviteUsersUrl, data);
+		String jsonStr = HttpUtils.post(batchInviteUsersUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()), data);
 		return new ApiResult(jsonStr);
 	}
 	/**
@@ -74,8 +73,7 @@ public class ConBatchApi {
 	 * @return
 	 */
 	public static ApiResult updateSyncUser(String data){
-		batchSyncUserUrl=batchSyncUserUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonStr = HttpUtils.post(batchSyncUserUrl, data);
+		String jsonStr = HttpUtils.post(batchSyncUserUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()), data);
 		return new ApiResult(jsonStr);
 	}
 	/**
@@ -93,8 +91,7 @@ public class ConBatchApi {
 	 * @return
 	 */
 	public static ApiResult batgReplaceUser(String data){
-		batchReplaceUserUrl=batchReplaceUserUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonStr = HttpUtils.post(batchReplaceUserUrl, data);
+		String jsonStr = HttpUtils.post(batchReplaceUserUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()), data);
 		return new ApiResult(jsonStr);
 	}
 	/**
@@ -112,8 +109,7 @@ public class ConBatchApi {
 	 * @return
 	 */
 	public static ApiResult batchReplaceParty(String data){
-		batchReplacePartyUrl=batchReplacePartyUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr());
-		String jsonStr = HttpUtils.post(batchReplacePartyUrl, data);
+		String jsonStr = HttpUtils.post(batchReplacePartyUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()), data);
 		return new ApiResult(jsonStr);
 	}
 	/**
@@ -122,9 +118,7 @@ public class ConBatchApi {
 	 * @return
 	 */
 	public static ApiResult batchGetResult(String jobId){
-		batchGetResultUrl=batchGetResultUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()).replace("JOBID", jobId);
-		String jsonStr = HttpUtils.get(batchGetResultUrl);
+		String jsonStr = HttpUtils.get(batchGetResultUrl.replace("ACCESS_TOKEN", AccessTokenApi.getAccessTokenStr()).replace("JOBID", jobId));
 		return new ApiResult(jsonStr);
 	}
-	
 }
