@@ -9,47 +9,51 @@ package com.jfinal.qy.weixin.sdk.msg.out;
 import com.jfinal.qy.weixin.sdk.msg.in.InMsg;
 
 /**
-	回复语音消息
-	<xml>
-	   <ToUserName><![CDATA[toUser]]></ToUserName>
-	   <FromUserName><![CDATA[fromUser]]></FromUserName>
-	   <CreateTime>1357290913</CreateTime>
-	   <MsgType><![CDATA[voice]]></MsgType>
-	   <Voice>
-	       <MediaId><![CDATA[media_id]]></MediaId>
-	   </Voice>
-	</xml>
+ * <pre>
+    回复语音消息
+ &lt;xml&gt;
+ &lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;
+ &lt;FromUserName&gt;&lt;![CDATA[fromUser]]&gt;&lt;/FromUserName&gt;
+ &lt;CreateTime&gt;12345678&lt;/CreateTime&gt;
+ &lt;MsgType&gt;&lt;![CDATA[voice]]&gt;&lt;/MsgType&gt;
+ &lt;Voice&gt;
+ &lt;MediaId&gt;&lt;![CDATA[media_id]]&gt;&lt;/MediaId&gt;
+ &lt;/Voice&gt;
+ &lt;/xml&gt;
+ </pre>
  */
+@SuppressWarnings("serial")
 public class OutVoiceMsg extends OutMsg {
-	public static final String TEMPLATE =
-			"<xml>\n" +
-				"<ToUserName><![CDATA[${__msg.toUserName}]]></ToUserName>\n" +
-				"<FromUserName><![CDATA[${__msg.fromUserName}]]></FromUserName>\n" +
-				"<CreateTime>${__msg.createTime}</CreateTime>\n" +
-				"<MsgType><![CDATA[${__msg.msgType}]]></MsgType>\n" +
-					"<Voice>\n" +
-						"<MediaId><![CDATA[${__msg.mediaId}]]></MediaId>\n" +
-					"</Voice>\n" +
-			"</xml>";
-			
-	private String mediaId;
-	
-	public OutVoiceMsg() {
-		this.msgType = "voice";
-	}
-	
-	public OutVoiceMsg(InMsg inMsg) {
-		super(inMsg);
-		this.msgType = "voice";
-	}
-	
-	public String getMediaId() {
-		return mediaId;
-	}
-	
-	public void setMediaId(String mediaId) {
-		this.mediaId = mediaId;
-	}
+
+    private String mediaId;
+
+    public OutVoiceMsg() {
+        this.msgType = "voice";
+    }
+
+    public OutVoiceMsg(InMsg inMsg) {
+        super(inMsg);
+        this.msgType = "voice";
+    }
+
+    @Override
+    protected void subXml(StringBuilder sb) {
+        if (null == mediaId) {
+            throw new NullPointerException("mediaId is null");
+        }
+        sb.append("<Voice>\n");
+        sb.append("<MediaId><![CDATA[").append(mediaId).append("]]></MediaId>\n");
+        sb.append("</Voice>\n");
+    }
+
+    public String getMediaId() {
+        return mediaId;
+    }
+
+    public void setMediaId(String mediaId) {
+        this.mediaId = mediaId;
+    }
+
 }
 
 

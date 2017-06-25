@@ -4,21 +4,18 @@ package com.jfinal.qy.weixin.sdk.kit;
 
 import java.util.Arrays;
 
-import org.apache.log4j.Logger;
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
-import org.dom4j.DocumentHelper;
-import org.dom4j.Element;
 
 import com.jfinal.core.Controller;
 import com.jfinal.kit.HashKit;
 import com.jfinal.kit.StrKit;
+import com.jfinal.log.Log;
 import com.jfinal.qy.weixin.sdk.api.ApiConfigKit;
+import com.jfinal.qy.weixin.sdk.utils.XmlHelper;
 import com.qq.weixin.mp.aes.AesException;
 import com.qq.weixin.mp.aes.WXBizMsgCrypt;
 
 public class SignatureCheckKit {
-	private static final Logger log =  Logger.getLogger(SignatureCheckKit.class);
+	private static final Log log =  Log.getLog(SignatureCheckKit.class);
 	public static final SignatureCheckKit me = new SignatureCheckKit();
 
 	public boolean checkSignature(String msgSignature, String timestamp, String nonce) {
@@ -46,7 +43,7 @@ public class SignatureCheckKit {
 			String corpId = ApiConfigKit.getApiConfig().getCorpId();
 			String encodingAesKey = ApiConfigKit.getApiConfig().getEncodingAesKey();
 			WXBizMsgCrypt wxcpt = new WXBizMsgCrypt(token,encodingAesKey,corpId);
-			result = wxcpt.VerifyURL(msgSignature, timeStamp, nonce,echoStr);
+			result = wxcpt.verifyUrl(msgSignature, timeStamp, nonce,echoStr);
 		} catch (AesException e) {
 			e.printStackTrace();
 		}
@@ -85,19 +82,10 @@ public class SignatureCheckKit {
 	}
 	
 	private String getEncrypt(String xml){
-		try {
-			Document doc = DocumentHelper.parseText(xml);
-			Element root = doc.getRootElement();
-			String content=root.elementText("Encrypt");
-			
-			return content;
-		} catch (DocumentException e) {
-		}
-		
-		return null;
-		
+		XmlHelper xmlHelper = XmlHelper.of(xml);
+		String content=xmlHelper.getString("//Encrypt");
+		return content;
 	}
-	
 }
 
 

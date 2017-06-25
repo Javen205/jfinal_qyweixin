@@ -1,13 +1,7 @@
-/**
- * Copyright (c) 2011-2014, James Zhan 詹波 (jfinal@126.com).
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- */
-
 package com.jfinal.qy.weixin.sdk.api;
 
 /**
- * 存放 Weixin 服务号需要用到的各个参数
+ * 存放微信企业号需要用到的各个参数
  */
 public class ApiConfig {
 	

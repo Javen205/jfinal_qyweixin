@@ -3,16 +3,15 @@
  *
  * Licensed under the Apache License, Version 1.0 (the "License");
  */
-package com.javen.demo.common;
+package com.jfinal.qy.weixin.demo;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
-import org.apache.log4j.Logger;
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.jfinal.kit.PropKit;
+import com.jfinal.log.Log;
 import com.jfinal.qy.weixin.sdk.api.ApiConfig;
 import com.jfinal.qy.weixin.sdk.api.ApiConfigKit;
 import com.jfinal.qy.weixin.sdk.api.ApiResult;
@@ -24,7 +23,7 @@ import com.jfinal.qy.weixin.sdk.jfinal.ApiController;
  * 2015年12月27日
  */
 public class QyOAuthController extends ApiController {
-	private Logger logger=Logger. getLogger(QyOAuthController.class);
+	private Log logger=Log.getLog(QyOAuthController.class);
 	/**
 	 * 如果要支持多公众账号，只需要在此返回各个公众号对应的  ApiConfig 对象即可
 	 * 可以通过在请求 url 中挂参数来动态从数据库中获取 ApiConfig 属性值

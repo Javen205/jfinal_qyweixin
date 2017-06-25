@@ -7,51 +7,53 @@
 package com.jfinal.qy.weixin.sdk.msg.in;
 
 /**
-	接收视频消息
-	<xml>
-	   <ToUserName><![CDATA[toUser]]></ToUserName>
-	   <FromUserName><![CDATA[fromUser]]></FromUserName>
-	   <CreateTime>1357290913</CreateTime>
-	   <MsgType><![CDATA[shortvideo]]></MsgType>
-	   <MediaId><![CDATA[media_id]]></MediaId>
-	   <ThumbMediaId><![CDATA[thumb_media_id]]></ThumbMediaId>
-	   <MsgId>1234567890123456</MsgId>
-	   <AgentID>1</AgentID>
-	</xml>
+ * <pre>
+    接收视频消息
+ &lt;xml&gt;
+ &lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;
+ &lt;FromUserName&gt;&lt;![CDATA[fromUser]]&gt;&lt;/FromUserName&gt;
+ &lt;CreateTime&gt;1357290913&lt;/CreateTime&gt;
+ &lt;MsgType&gt;&lt;![CDATA[shortvideo]]&gt;&lt;/MsgType&gt;
+ &lt;MediaId&gt;&lt;![CDATA[media_id]]&gt;&lt;/MediaId&gt;
+ &lt;ThumbMediaId&gt;&lt;![CDATA[thumb_media_id]]&gt;&lt;/ThumbMediaId&gt;
+ &lt;MsgId&gt;1234567890123456&lt;/MsgId&gt;
+ &lt;/xml&gt;
+ </pre>
 */
+@SuppressWarnings("serial")
 public class InShortVideoMsg extends InMsg {
 
-	private String mediaId;
-	private String thumbMediaId;
-	private String msgId;
+    private String mediaId;
+    private String thumbMediaId;
+    private String msgId;
 
-	public InShortVideoMsg(String toUserName, String fromUserName, Integer createTime, String msgType,String agentId) {
-		super(toUserName, fromUserName, createTime, msgType,agentId);
-	}
-	
-	public String getMediaId() {
-		return mediaId;
-	}
-	
-	public void setMediaId(String mediaId) {
-		this.mediaId = mediaId;
-	}
-	
-	public String getThumbMediaId() {
-		return thumbMediaId;
-	}
-	
-	public void setThumbMediaId(String thumbMediaId) {
-		this.thumbMediaId = thumbMediaId;
-	}
-	
-	public String getMsgId() {
-		return msgId;
-	}
-	
-	public void setMsgId(String msgId) {
-		this.msgId = msgId;
-	}
+    public InShortVideoMsg(String toUserName, String fromUserName, Integer createTime, String msgType, String agentId) {
+        super(toUserName, fromUserName, createTime, msgType, agentId);
+    }
+
+    public String getMediaId() {
+        return mediaId;
+    }
+
+    public void setMediaId(String mediaId) {
+        this.mediaId = mediaId;
+    }
+
+    public String getThumbMediaId() {
+        return thumbMediaId;
+    }
+
+    public void setThumbMediaId(String thumbMediaId) {
+        this.thumbMediaId = thumbMediaId;
+    }
+
+    public String getMsgId() {
+        return msgId;
+    }
+
+    public void setMsgId(String msgId) {
+        this.msgId = msgId;
+    }
 }
 
 

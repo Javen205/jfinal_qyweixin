@@ -25,7 +25,6 @@ import com.qq.weixin.mp.aes.WXBizMsgCrypt;
  */
 public class MsgEncryptKit {
 	
-	private static final String format = "<xml><ToUserName><![CDATA[toUser]]></ToUserName><Encrypt><![CDATA[%1$s]]></Encrypt></xml>";
 	/**
 	 * 将公众平台回复用户的消息加密打包.
 	 * @param msg
@@ -37,7 +36,7 @@ public class MsgEncryptKit {
 		try {
 			ApiConfig ac = ApiConfigKit.getApiConfig();
 			WXBizMsgCrypt pc = new WXBizMsgCrypt(ac.getToken(), ac.getEncodingAesKey(), ac.getCorpId());
-			return pc.EncryptMsg(msg, timestamp, nonce);
+			return pc.encryptMsg(msg, timestamp, nonce);
 		}
 		catch (Exception e) {
 			throw new RuntimeException(e);
@@ -60,7 +59,7 @@ public class MsgEncryptKit {
 				throw new IllegalStateException("encodingAesKey can not be null, config encodingAesKey first.");
 			
 			WXBizMsgCrypt pc = new WXBizMsgCrypt(ac.getToken(), encodingAesKey, ac.getCorpId());
-			return pc.DecryptMsg(msgSignature, timestamp, nonce, encryptedMsg);
+			return pc.decryptMsg(msgSignature, timestamp, nonce, encryptedMsg);
 		}
 		catch (Exception e) {
 			throw new RuntimeException(e);

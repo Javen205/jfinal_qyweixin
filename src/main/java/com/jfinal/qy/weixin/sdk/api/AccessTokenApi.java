@@ -1,9 +1,11 @@
 
+
 package com.jfinal.qy.weixin.sdk.api;
 
 import java.util.Map;
 import java.util.concurrent.Callable;
 
+import com.jfinal.kit.StrKit;
 import com.jfinal.qy.weixin.sdk.cache.IAccessTokenCache;
 import com.jfinal.qy.weixin.sdk.kit.ParaMap;
 import com.jfinal.qy.weixin.sdk.utils.HttpUtils;
@@ -21,54 +23,92 @@ import com.jfinal.qy.weixin.sdk.utils.RetryUtils;
  * </pre>
  */
 public class AccessTokenApi {
-	
+
 	// "https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=id&corpsecret=secrect";
-	private static String url = "https://qyapi.weixin.qq.com/cgi-bin/gettoken";
-	
-	// 企业号每个应用的access_token应独立存储，此处用secret作为区分应用的标识
-	static IAccessTokenCache accessTokenCache = ApiConfigKit.getAccessTokenCache();
-	
-	/**
-	 * 从缓存中获取 access token，如果未取到或者 access token 不可用则先更新再获取
-	 */
-	public static AccessToken getAccessToken() {
-		String corpsecret = ApiConfigKit.getApiConfig().getCorpSecret();
-		AccessToken result = accessTokenCache.get(corpsecret);
-		if (result != null && result.isAvailable())
-			return result;
-		
-		refreshAccessToken();
-		return accessTokenCache.get(corpsecret);
-	}
-	
-	/**
-	 * 直接获取 accessToken 字符串，方便使用
-	 * @return String accessToken
-	 */
-	public static String getAccessTokenStr() {
-		return getAccessToken().getAccessToken();
-	}
-	
-	/**
-	 * 强制更新 access token 值
-	 */
-	public static synchronized void refreshAccessToken() {
-		ApiConfig ac = ApiConfigKit.getApiConfig();
-		String corpid = ac.getCorpId();
-		String corpsecret = ac.getCorpSecret();
-		final Map<String, String> queryParas = ParaMap.create("corpid", corpid).put("corpsecret", corpsecret).getData();
-		
-		// 最多三次请求
-		AccessToken result = RetryUtils.retryOnException(3, new Callable<AccessToken>() {
-			
-			public AccessToken call() throws Exception {
-				String json = HttpUtils.get(url, queryParas);
-				return new AccessToken(json);
-			}
-		});
-		
-		// 三次请求如果仍然返回了不可用的 access token 仍然 put 进去，便于上层通过 AccessToken 中的属性判断底层的情况
-		accessTokenCache.set(corpsecret, result);
-	}
+    private static String url = "https://qyapi.weixin.qq.com/cgi-bin/gettoken";
+
+    /**
+     * 从缓存中获取 access token，如果未取到或者 access token 不可用则先更新再获取
+     * @return AccessToken accessToken
+     */
+    public static AccessToken getAccessToken() {
+        ApiConfig ac = ApiConfigKit.getApiConfig();
+        AccessToken result = getAvailableAccessToken(ac);
+        if (result != null) {
+            return result;
+        }
+
+        return refreshAccessTokenIfNecessary(ac);
+    }
+
+    private static AccessToken getAvailableAccessToken(ApiConfig ac) {
+        // 利用 appId 与 accessToken 建立关联，支持多账户
+        IAccessTokenCache accessTokenCache = ApiConfigKit.getAccessTokenCache();
+        
+        String accessTokenJson = accessTokenCache.get(ac.getCorpId());
+        if (StrKit.notBlank(accessTokenJson)) {
+            AccessToken result = new AccessToken(accessTokenJson);
+            if (result != null && result.isAvailable()) {
+                return result;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 直接获取 accessToken 字符串，方便使用
+     * @return String accessToken
+     */
+    public static String getAccessTokenStr() {
+        return getAccessToken().getAccessToken();
+    }
+
+    /**
+     * synchronized 配合再次获取 token 并检测可用性，防止多线程重复刷新 token 值
+     */
+    private static synchronized AccessToken refreshAccessTokenIfNecessary(ApiConfig ac) {
+        AccessToken result = getAvailableAccessToken(ac);
+        if (result != null) {
+            return result;
+        }
+        return refreshAccessToken(ac);
+    }
+
+    /**
+     * 无条件强制更新 access token 值，不再对 cache 中的 token 进行判断
+     * @return AccessToken
+     */
+    public static AccessToken refreshAccessToken() {
+        return refreshAccessToken(ApiConfigKit.getApiConfig());
+    }
+
+    /**
+     * 无条件强制更新 access token 值，不再对 cache 中的 token 进行判断
+     * @param ac ApiConfig
+     * @return AccessToken
+     */
+    public static AccessToken refreshAccessToken(ApiConfig ac) {
+        String corpid = ac.getCorpId();
+        String corpsecret = ac.getCorpSecret();
+        final Map<String, String> queryParas = ParaMap.create("corpid", corpid).put("corpsecret", corpsecret).getData();
+
+        // 最多三次请求
+        AccessToken result = RetryUtils.retryOnException(3, new Callable<AccessToken>() {
+
+            @Override
+            public AccessToken call() throws Exception {
+                String json = HttpUtils.get(url, queryParas);
+                return new AccessToken(json);
+            }
+        });
+
+        // 三次请求如果仍然返回了不可用的 access token 仍然 put 进去，便于上层通过 AccessToken 中的属性判断底层的情况
+        if (null != result) {
+            // 利用 appId 与 accessToken 建立关联，支持多账户
+            IAccessTokenCache accessTokenCache = ApiConfigKit.getAccessTokenCache();
+            accessTokenCache.set(ac.getCorpId(), result.getCacheJson());
+        }
+        return result;
+    }
 
 }

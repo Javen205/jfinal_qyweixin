@@ -6,97 +6,104 @@ import java.util.Map;
 import com.jfinal.qy.weixin.sdk.utils.JsonUtils;
 import com.jfinal.qy.weixin.sdk.utils.RetryUtils.ResultCheck;
 
+
+
 /**
  * JsTicket返回封装
  */
+@SuppressWarnings("unchecked")
 public class JsTicket implements ResultCheck, Serializable {
+    private static final long serialVersionUID = 6600179487477942329L;
 
-	private static final long serialVersionUID = 6600179487477942329L;
+    private String ticket; // 正确获取到 ticket 时有值
+    private Integer expires_in; // 正确获取到 access_token 时有值
+    private Integer errcode; // 出错时有值
+    private String errmsg; // 出错时有值
 
-	private String ticket; // 正确获取到 ticket 时有值
-	private Integer expires_in; // 正确获取到 access_token 时有值
-	private Integer errcode; // 出错时有值
-	private String errmsg; // 出错时有值
+    private Long expiredTime; // 正确获取到 ticket 时有值，存放过期时间
+    private String json;
 
-	private Long expiredTime; // 正确获取到 ticket 时有值，存放过期时间
-	private String json;
+    public JsTicket(String jsonStr) {
+        this.json = jsonStr;
 
-	public JsTicket(String jsonStr) {
-		this.json = jsonStr;
+        try {
+            Map<String, Object> temp = JsonUtils.parse(jsonStr, Map.class);
+            ticket = (String) temp.get("ticket");
+            expires_in = (Integer) temp.get("expires_in");
+            errcode = (Integer) temp.get("errcode");
+            errmsg = (String) temp.get("errmsg");
 
-		try {
-			@SuppressWarnings("unchecked")
-			Map<String, Object> temp = JsonUtils.parse(jsonStr, Map.class);
-			ticket = (String) temp.get("ticket");
-			expires_in = getInt(temp, "expires_in");
-			errcode = getInt(temp, "errcode");
-			errmsg = (String) temp.get("errmsg");
+            if (expires_in != null)
+                expiredTime = System.currentTimeMillis() + ((expires_in - 5) * 1000);
+            // 用户缓存时还原
+            if (temp.containsKey("expiredTime")) {
+                 expiredTime = (Long) temp.get("expiredTime");
+            }
 
-			if (expires_in != null)
-				expiredTime = System.currentTimeMillis() + ((expires_in - 5) * 1000);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
+    public String getJson() {
+        return json;
+    }
 
-	@Override
-	public String toString() {
-		return getJson();
-	}
-	
-	private Integer getInt(Map<String, Object> temp, String key) {
-		Number number = (Number) temp.get(key);
-		return number == null ? null : number.intValue();
-	}
-	
-	public String getJson() {
-		return json;
-	}
+    public String getCacheJson() {
+        Map<String, Object> temp = JsonUtils.parse(json, Map.class);
+        temp.put("expiredTime", expiredTime);
+        temp.remove("expires_in");
+        return JsonUtils.toJson(temp);
+    }
 
-	public boolean isAvailable() {
+    public boolean isAvailable() {
         if (expiredTime == null)
-    		return false;
-		if (!isSucceed())
-			return false;
-		if (expiredTime < System.currentTimeMillis())
-			return false;
-		return ticket != null;
-	}
+            return false;
+        if (!isSucceed())
+            return false;
+        if (expiredTime < System.currentTimeMillis())
+            return false;
+        return ticket != null;
+    }
 
-	public String getTicket() {
-		return ticket;
-	}
+    public String getTicket() {
+        return ticket;
+    }
 
-	public Integer getExpiresIn() {
-		return expires_in;
-	}
+    public Integer getExpiresIn() {
+        return expires_in;
+    }
 
-	public Integer getErrorCode() {
-		return errcode;
-	}
+    public Integer getErrorCode() {
+        return errcode;
+    }
 
-	public String getErrorMsg() {
-		if (errcode != null) {
-			String result = ReturnCode.get(errcode);
-			if (result != null)
-				return result;
-		}
-		return errmsg;
-	}
+    public String getErrorMsg() {
+        if (errcode != null) {
+            String result = ReturnCode.get(errcode);
+            if (result != null)
+                return result;
+        }
+        return errmsg;
+    }
 
-	/**
-	 * APi 请求是否成功返回
-	 */
-	public boolean isSucceed() {
-		Integer errorCode = getErrorCode();
-		// errorCode 为 0
-		// 时也可以表示为成功，详见：http://mp.weixin.qq.com/wiki/index.php?title=%E5%85%A8%E5%B1%80%E8%BF%94%E5%9B%9E%E7%A0%81%E8%AF%B4%E6%98%8E
-		return (errorCode == null || errorCode == 0);
-	}
+    public Long getExpiredTime() {
+        return expiredTime;
+    }
 
-	public boolean matching() {
-		return isAvailable();
-	}
+    /**
+     * APi 请求是否成功返回
+     * @return boolean
+     */
+    public boolean isSucceed() {
+        Integer errorCode = getErrorCode();
+        // errorCode 为 0
+        return (errorCode == null || errorCode == 0);
+    }
+
+    @Override
+    public boolean matching() {
+        return isAvailable();
+    }
 
 }

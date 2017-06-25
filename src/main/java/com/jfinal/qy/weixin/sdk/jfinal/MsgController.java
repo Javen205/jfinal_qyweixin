@@ -1,21 +1,20 @@
 
 package com.jfinal.qy.weixin.sdk.jfinal;
 
-import org.apache.log4j.Logger;
-
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 import com.jfinal.ext.interceptor.NotAction;
 import com.jfinal.kit.HttpKit;
-import com.jfinal.qy.weixin.sdk.api.ApiConfig;
+import com.jfinal.kit.StrKit;
+import com.jfinal.log.Log;
 import com.jfinal.qy.weixin.sdk.api.ApiConfigKit;
 import com.jfinal.qy.weixin.sdk.kit.MsgEncryptKit;
-import com.jfinal.qy.weixin.sdk.kit.SignatureCheckKit;
 import com.jfinal.qy.weixin.sdk.msg.InMsgParser;
-import com.jfinal.qy.weixin.sdk.msg.OutMsgXmlBuilder;
 import com.jfinal.qy.weixin.sdk.msg.in.InImageMsg;
 import com.jfinal.qy.weixin.sdk.msg.in.InLocationMsg;
 import com.jfinal.qy.weixin.sdk.msg.in.InMsg;
+import com.jfinal.qy.weixin.sdk.msg.in.InNotDefinedEvent;
+import com.jfinal.qy.weixin.sdk.msg.in.InNotDefinedMsg;
 import com.jfinal.qy.weixin.sdk.msg.in.InShortVideoMsg;
 import com.jfinal.qy.weixin.sdk.msg.in.InTextMsg;
 import com.jfinal.qy.weixin.sdk.msg.in.InVideoMsg;
@@ -34,10 +33,9 @@ import com.jfinal.qy.weixin.sdk.msg.out.OutTextMsg;
  */
 public abstract class MsgController extends Controller {
 	
-	private static final Logger log =  Logger.getLogger(MsgController.class);
+	private static final Log log =  Log.getLog(MsgController.class);
 	private String inMsgXml = null;		// 本次请求 xml数据
 	private InMsg inMsg = null;			// 本次请求 xml 解析后的 InMsg 对象
-	public abstract ApiConfig getApiConfig();
 	
 	/**
 	 * weixin 公众号服务器调用唯一入口，即在开发者中心输入的 URL 必须要指向此 action
@@ -77,14 +75,20 @@ public abstract class MsgController extends Controller {
 		else if (msg instanceof InJobEvent)
 			processInJobEvent((InJobEvent) msg);
 		
-		else
-			log.error("未能识别的消息类型。 消息 xml 内容为：\n" + getInMsgXml());
+		else if (msg instanceof InNotDefinedMsg) {
+            log.error("未能识别的消息类型。 消息 xml 内容为：\n" + getInMsgXml());
+            processIsNotDefinedMsg((InNotDefinedMsg) msg);
+        }
+		else if (msg instanceof InNotDefinedEvent) {
+	            log.error("未能识别的事件类型。 消息 xml 内容为：\n" + getInMsgXml());
+	            processIsNotDefinedEvent((InNotDefinedEvent) msg);
+	    }
 	}
 	/**
 	 * 在接收到微信服务器的 InMsg 消息后后响应 OutMsg 消息
 	 */
 	public void render(OutMsg outMsg) {
-		String outMsgXml = OutMsgXmlBuilder.build(outMsg);
+		 String outMsgXml = outMsg.toXml();
 		// 开发模式向控制台输出即将发送的 OutMsg 消息的 xml 内容
 		if (ApiConfigKit.isDevMode()) {
 			System.out.println("发送消息:");
@@ -109,19 +113,20 @@ public abstract class MsgController extends Controller {
 	@Before(NotAction.class)
 	public String getInMsgXml() {
 		if (inMsgXml == null) {
-			System.out.println("222222222222222222222222");
 			inMsgXml =HttpKit.readData(getRequest());
-			if (!ApiConfigKit.isDevMode()) {
-				if (!SignatureCheckKit.me.checkSignature(this,inMsgXml)) {
-					renderText("签名验证失败，请确定是微信服务器在发送消息过来");
-				}
-			}
+//			if (!ApiConfigKit.isDevMode()) {
+//				if (!SignatureCheckKit.me.checkSignature(this,inMsgXml)) {
+//					renderText("签名验证失败，请确定是微信服务器在发送消息过来");
+//				}
+//			}
 			// 是否需要解密消息
 			if (ApiConfigKit.getApiConfig().isEncryptMessage()) {
 				inMsgXml = MsgEncryptKit.decrypt(inMsgXml, getPara("timestamp"), getPara("nonce"), getPara("msg_signature"));
 			}
 		}
-		
+		if (StrKit.isBlank(inMsgXml)) {
+            throw new RuntimeException("请不要在浏览器中请求该连接,调试请查看WIKI:http://git.oschina.net/jfinal/jfinal-weixin/wikis/JFinal-weixin-demo%E5%92%8C%E8%B0%83%E8%AF%95");
+        }
 		return inMsgXml;
 	}
 	
@@ -168,17 +173,17 @@ public abstract class MsgController extends Controller {
 	
 	// 处理接收到的异步任务完成事件事件
 	protected abstract void processInJobEvent(InJobEvent inJobEvent);
+	
+	 /**
+     * 没有找到对应的消息
+     * @param inNotDefinedMsg 没有对应消息
+     */
+    protected abstract void processIsNotDefinedMsg(InNotDefinedMsg inNotDefinedMsg);
+
+    /**
+     * 没有找到对应的事件消息
+     * @param inNotDefinedEvent 没有对应的事件消息
+     */
+    protected abstract void processIsNotDefinedEvent(InNotDefinedEvent inNotDefinedEvent);
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

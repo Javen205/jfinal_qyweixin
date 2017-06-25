@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="ehcache.xsd"
+         updateCheck="false" monitoring="autodetect"
+         dynamicConfig="true">
+         
+    <diskStore path="java.io.tmpdir"/>
+    
+    <!--
+    Default Cache configuration. These settings will be applied to caches
+    created programmatically using CacheManager.add(String cacheName).
+    This element is optional, and using CacheManager.add(String cacheName) when
+    its not present will throw CacheException
+
+    The defaultCache has an implicit name "default" which is a reserved cache name.
+    -->
+    <defaultCache
+           maxEntriesLocalHeap="10000"
+           eternal="false"
+           overflowToDisk="true"
+           timeToIdleSeconds="20"
+           timeToLiveSeconds="60">
+    </defaultCache>
+    
+    <!-- 存放用户登录信息，过期时间 3600秒，用ehache替换session功能 -->
+    <cache name="session"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="100000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="true"
+           diskPersistent="true"
+            />
+    
+    <!-- 缓存半小时 -->
+    <cache name="halfHour"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="100000"
+           eternal="false"
+           timeToIdleSeconds="1800"
+           timeToLiveSeconds="0"
+           overflowToDisk="true"
+           diskPersistent="true"
+            />
+    
+    <!-- 存放blockIp 24小时 -->
+    <cache name="blockIp"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="100000"
+           eternal="false"
+           timeToIdleSeconds="86400"
+           timeToLiveSeconds="86400"
+           overflowToDisk="true"
+           diskPersistent="true"
+            />
+    
+    <!-- 存放blockedUserId -->
+    <cache name="blockedUserId"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="100000"
+           eternal="false"
+           timeToIdleSeconds="99000000"
+           timeToLiveSeconds="99000000"
+           overflowToDisk="true"
+           diskPersistent="true"
+            />
+    
+    <!--
+    Sample caches. Following are some example caches. Remove these before use.
+    -->
+
+    <!--
+    Sample cache named sampleCache1
+    This cache contains a maximum in memory of 10000 elements, and will expire
+    an element if it is idle for more than 5 minutes and lives for more than
+    10 minutes.
+
+    If there are more than 10000 elements it will overflow to the
+    disk cache, which in this configuration will go to wherever java.io.tmp is
+    defined on your system. On a standard Linux system this will be /tmp"
+    -->
+    <cache name="sampleCache1"
+           maxEntriesLocalHeap="10000"
+           maxEntriesLocalDisk="1000"
+           eternal="false"
+           overflowToDisk="true"
+           diskSpoolBufferSizeMB="20"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="600"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off"
+            />
+            
+    <!--
+    Sample cache named sampleCache2
+    This cache has a maximum of 1000 elements in memory. There is no overflow to disk, so 1000
+    is also the maximum cache size. Note that when a cache is eternal, timeToLive and
+    timeToIdle are not used and do not need to be specified.
+    -->
+    <cache name="sampleCache2"
+           maxEntriesLocalHeap="1000"
+           eternal="true"
+           overflowToDisk="false"
+           memoryStoreEvictionPolicy="FIFO"
+            />
+
+    <!--
+    Sample cache named sampleCache3. This cache overflows to disk. The disk store is
+    persistent between cache and VM restarts. The disk expiry thread interval is set to 10
+    minutes, overriding the default of 2 minutes.
+    -->
+    <cache name="sampleCache3"
+           maxEntriesLocalHeap="500"
+           eternal="false"
+           overflowToDisk="true"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="600"
+           diskPersistent="true"
+           diskExpiryThreadIntervalSeconds="1"
+           memoryStoreEvictionPolicy="LFU"
+            />
+
+    <!--
+    Sample Terracotta clustered cache named sampleTerracottaCache.
+    This cache uses Terracotta to cluster the contents of the cache.
+    -->
+    <cache name="sampleTerracottaCache"
+           maxBytesLocalHeap="10m"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="1800"
+           overflowToDisk="false">
+    </cache>
+</ehcache>

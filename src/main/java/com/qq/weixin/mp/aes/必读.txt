@@ -1,0 +1,8 @@
+1：此目录下所有java源文件均由微信平台官方提供，并非 jfinal weixin 出品
+
+2：出现异常java.security.InvalidKeyException:illegal Key Size的解决方案
+详见 readme.txt 文件中的说明，该文件也由微信平台官方提供
+
+
+
+
