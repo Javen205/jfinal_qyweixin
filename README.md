@@ -1,6 +1,6 @@
 # jfinal_qyweixin 企业微信号极速开发
 
-jfinal_qyweixin是基于 jfinal-weixin 二次开发，只需浏览 Demo 代码即可进行极速开发。
+jfinal_qyweixin是基于 jfinal-weixin二次开发而来，只需浏览 Demo 代码即可进行极速开发。同时支持微信企业号以及企业微信 
 
 ### 帮助文档持续更新当中 [wiki](http://git.oschina.net/javen205/jfinal_qyweixin/wikis/home)<br /> 
 
