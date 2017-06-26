@@ -10,7 +10,7 @@ package com.qq.weixin.mp.aes;
 
 import java.util.Arrays;
 
-import com.jfinal.qy.weixin.sdk.utils.Charsets;
+import com.jfinal.qyweixin.sdk.utils.Charsets;
 
 /**
  * 提供基于PKCS7算法的加解密接口.

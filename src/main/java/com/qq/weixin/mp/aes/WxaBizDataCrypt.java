@@ -1,9 +1,3 @@
-/**
- * Copyright (c) 2011-2014, L.cm 卢春梦 (qq596392912@gmail.com).
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- */
-
 package com.qq.weixin.mp.aes;
 
 
@@ -11,8 +5,8 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import com.jfinal.qy.weixin.sdk.utils.Base64Utils;
-import com.jfinal.qy.weixin.sdk.utils.Charsets;
+import com.jfinal.qyweixin.sdk.utils.Base64Utils;
+import com.jfinal.qyweixin.sdk.utils.Charsets;
 
 import java.security.AlgorithmParameters;
 import java.security.Key;

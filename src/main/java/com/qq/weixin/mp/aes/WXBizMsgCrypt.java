@@ -15,8 +15,8 @@ package com.qq.weixin.mp.aes;
 
 import com.jfinal.kit.LogKit;
 import com.jfinal.kit.StrKit;
-import com.jfinal.qy.weixin.sdk.utils.Base64Utils;
-import com.jfinal.qy.weixin.sdk.utils.Charsets;
+import com.jfinal.qyweixin.sdk.utils.Base64Utils;
+import com.jfinal.qyweixin.sdk.utils.Charsets;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;

@@ -9,7 +9,7 @@
 package com.qq.weixin.mp.aes;
 
 import com.jfinal.kit.LogKit;
-import com.jfinal.qy.weixin.sdk.utils.XmlHelper;
+import com.jfinal.qyweixin.sdk.utils.XmlHelper;
 
 /**
  * XMLParse class
