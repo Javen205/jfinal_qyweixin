@@ -2,7 +2,11 @@
 
 jfinal_qyweixin是基于 jfinal-weixin二次开发而来，只需浏览 Demo 代码即可进行极速开发。同时支持微信企业号以及企业微信 
 
-### 帮助文档持续更新当中 [wiki](http://git.oschina.net/javen205/jfinal_qyweixin/wikis/home)<br /> 
+
+### 官方文档
+
+【[企业微信](https://work.weixin.qq.com/api/doc)】
+【[微信企业号](http://qydev.weixin.qq.com/wiki)】
 
 ### 开源地址
 

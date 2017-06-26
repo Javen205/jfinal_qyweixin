@@ -28,6 +28,9 @@ public class AccessToken implements ResultCheck, Serializable {
             access_token = (String) temp.get("access_token");
             expires_in = (Integer) temp.get("expires_in");
             errcode = (Integer) temp.get("errcode");
+            if (errcode !=null && errcode == 0) {
+            	errcode = null;
+			}
             errmsg = (String) temp.get("errmsg");
 
             if (expires_in != null)
