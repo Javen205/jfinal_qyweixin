@@ -1,27 +1,50 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.jfinal.qyweixin</groupId>
-	<artifactId>jfinal_qyweixin</artifactId>
+	<groupId>com.jfinal</groupId>
+	<artifactId>jfinal-qyweixin</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<name>jfinal_qyweixin</name>
+	<name>jfinal-qyweixin</name>
 	<url>http://www.jfinal.com</url>
 
 	<properties>
 		<jdk.version>1.7</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
+	<issueManagement>
+		<system>Github Issue</system>
+		<url>http://git.oschina.net/javen205/jfinal_qyweixin/issues</url>
+	</issueManagement>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<id>jfinal-qyweixin</id>
+			<name>Javen</name>
+			<email>javen205@126.com</email>
+			<url>http://git.oschina.net/javen205</url>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git@git.oschina.net:javen205/jfinal_qyweixin.git</connection>
+		<developerConnection>scm:git:git@git.oschina.net:javen205/jfinal_qyweixin.git</developerConnection>
+		<url>git@git.oschina.net:javen205/jfinal_qyweixin.git</url>
+	</scm>
+
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>
-		<version>1</version>
+		<version>7</version>
 	</parent>
 
-	<scm>
-		<connection>scm:git:git@git.oschina.net/javen205/jfinal_qyweixin.git</connection>
-		<developerConnection>scm:git:git@https://git.oschina.net/javen205/jfinal_qyweixin.git</developerConnection>
-		<url>git@https://git.oschina.net/javen205/jfinal_qyweixin.git</url>
-	</scm>
+
 
 	<dependencies>
 		<dependency>
@@ -88,12 +111,52 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>jfinal_qyweixin</finalName>
+		<finalName>jfinal-qyweixin</finalName>
 		<plugins>
+			<!-- Source -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Java doc -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.3</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<outputDirectory>${basedir}</outputDirectory>
+					<reportOutputDirectory>${basedir}</reportOutputDirectory>
+					<excludePackageNames>com.jfinal.qyweixin.demo</excludePackageNames>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.1.1</version>
 			</plugin>
+			
 			<plugin>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.3.2</version>
@@ -117,30 +180,11 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>${jdk.version}</source>
-					<target>${jdk.version}</target>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10.3</version>
-				<configuration>
-					<encoding>${project.build.sourceEncoding}</encoding>
-					<outputDirectory>${basedir}</outputDirectory>
-					<reportOutputDirectory>${basedir}</reportOutputDirectory>
-					<excludePackageNames>com.jfinal.qyweixin.demo</excludePackageNames>
-				</configuration>
-			</plugin>
+
+
 		</plugins>
 	</build>
-	
+
 	<!-- 使用aliyun maven -->
 	<repositories>
 		<repository>
@@ -149,8 +193,8 @@
 			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
 		</repository>
 	</repositories>
-	
-	
+
+
 	<profiles>
 		<!-- mvn clean deploy -P release -Dgpg.passphrase=xxxx -->
 		<profile>
