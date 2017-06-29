@@ -1,42 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jfinal</groupId>
 	<artifactId>jfinal-qyweixin</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.1-SNAPSHOT</version>
 	<name>jfinal-qyweixin</name>
 	<url>http://www.jfinal.com</url>
 
 	<properties>
-		<jdk.version>1.7</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk.version>1.6</jdk.version>
 	</properties>
-
-	<issueManagement>
-		<system>Github Issue</system>
-		<url>http://git.oschina.net/javen205/jfinal_qyweixin/issues</url>
-	</issueManagement>
-
-	<licenses>
-		<license>
-			<name>The Apache Software License, Version 2.0</name>
-			<url>http://apache.org/licenses/LICENSE-2.0.txt</url>
-		</license>
-	</licenses>
-	<developers>
-		<developer>
-			<id>jfinal-qyweixin</id>
-			<name>Javen</name>
-			<email>javen205@126.com</email>
-			<url>http://git.oschina.net/javen205</url>
-		</developer>
-	</developers>
-
-	<scm>
-		<connection>scm:git:git@git.oschina.net:javen205/jfinal_qyweixin.git</connection>
-		<developerConnection>scm:git:git@git.oschina.net:javen205/jfinal_qyweixin.git</developerConnection>
-		<url>git@git.oschina.net:javen205/jfinal_qyweixin.git</url>
-	</scm>
 
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
@@ -44,7 +17,11 @@
 		<version>7</version>
 	</parent>
 
-
+	<scm>
+		<connection>scm:git:git@git.oschina.net:javen205/jfinal_qyweixin.git</connection>
+		<developerConnection>scm:git:git@git.oschina.net:javen205/jfinal_qyweixin.git</developerConnection>
+		<url>git@git.oschina.net:javen205/jfinal_qyweixin.git</url>
+	</scm>
 
 	<dependencies>
 		<dependency>
@@ -110,53 +87,14 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<finalName>jfinal-qyweixin</finalName>
 		<plugins>
-			<!-- Source -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>2.1.2</version>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>jar-no-fork</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<!-- Java doc -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10.3</version>
-				<configuration>
-					<encoding>${project.build.sourceEncoding}</encoding>
-					<outputDirectory>${basedir}</outputDirectory>
-					<reportOutputDirectory>${basedir}</reportOutputDirectory>
-					<excludePackageNames>com.jfinal.qyweixin.demo</excludePackageNames>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>${jdk.version}</source>
-					<target>${jdk.version}</target>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
-			</plugin>
-			
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.1.1</version>
 			</plugin>
-			
 			<plugin>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.3.2</version>
@@ -180,8 +118,27 @@
 					</excludes>
 				</configuration>
 			</plugin>
-
-
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.3</version>
+				<configuration>
+					<additionalparam>-Xdoclint:none</additionalparam>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<outputDirectory>${basedir}</outputDirectory>
+					<reportOutputDirectory>${basedir}</reportOutputDirectory>
+					<excludePackageNames>com.jfinal.qyweixin.demo</excludePackageNames>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -194,8 +151,17 @@
 		</repository>
 	</repositories>
 
-
 	<profiles>
+		<profile>
+			<!-- 本地开发环境 -->
+			<id>dev</id>
+			<properties>
+				<profiles.active>dev</profiles.active>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
 		<!-- mvn clean deploy -P release -Dgpg.passphrase=xxxx -->
 		<profile>
 			<id>release</id>

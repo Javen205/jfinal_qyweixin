@@ -14,7 +14,17 @@ https://github.com/Javen205/jfinal_qyweixin
 
 http://git.oschina.net/javen205/jfinal_qyweixin
 
+### jar 已上传到Maven 仓库
 
+```
+
+<dependency>
+	<groupId>com.jfinal</groupId>
+	<artifactId>jfinal-qyweixin</artifactId>
+	<version>1.0</version>
+</dependency>
+
+```
 
 ### 更多支持
 
